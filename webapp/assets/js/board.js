@@ -1,0 +1,5 @@
+$(function(){
+	
+	changeActiveGnb(1);
+	
+})

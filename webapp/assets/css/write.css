@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+@import "init.css";
+@import "header.css";
+@import "sidebar.css";
+@import "top_gnb.css";
+@import "footer.css";
+
+#title{
+	margin-bottom:20px;
+	font-size:20px;
+}
+
+.board_view {width:100%;border-top:1px solid #ccc;}
+.board_view tbody th {text-align:left;background:#f7f7f7;color:#3b3a3a }
+.board_view tbody th.list_tit {font-size:13px;color:#000;letter-spacing:0.1px}
+.board_view tbody .no_line_b th, .board_view tbody .no_line_b td {border-bottom:none}
+.board_view tbody th, .board_view tbody td {padding:15px 0 16px 16px;}
+.board_view tbody td.view_text {border-top:1px solid #ccc; ;padding:20px }
+.board_view tbody th.th_file {padding:0 0 0 0; vertical-align:middle}
+div.right{
+	position: absolute;
+	right: 0px;
+
+} 
+div.right>span>a{
+	margin-right: 10px;
+}
+

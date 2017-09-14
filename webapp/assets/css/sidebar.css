@@ -1,0 +1,28 @@
+   @CHARSET "UTF-8";
+      body {
+            position: relative;
+        }
+
+        #global_aside {
+            position: absolute;
+			margin-top : 50px;
+            border: 2px solid #048cfb;
+            border-radius: 5px;
+            margin-left: -150px; top: 75px;
+            width: 90px;
+            padding: 10px;
+        }
+
+        #global_aside > span {
+            display: block;
+            padding-bottom: 10px;
+        }
+        
+        #global_aside > span > a {
+			margin-bottom: 5px;
+              color: #000000;
+        }
+        
+        #global_aside > span > img {
+			margin-top: 5px;
+        }

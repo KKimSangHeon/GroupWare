@@ -1,0 +1,21 @@
+  @CHARSET "UTF-8";
+  
+      #main_header {
+            position: relative;
+            height: 75px;
+        }
+
+        #main_header > h1.logo {
+            position: absolute;
+            left: 15px; top: 10px;
+        }
+
+        #main_header > div.login_menu {
+            position: absolute;
+            top: 20px; right: 0px;
+        }
+        #main_header > div.login_menu > span > a {
+            padding-left: 10px;
+              font-size: 1.0em;
+              color: #000000;
+        }

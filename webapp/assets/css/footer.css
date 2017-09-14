@@ -1,0 +1,28 @@
+   @CHARSET "UTF-8";
+  
+ #main_footer {
+     border-top: 2px solid #048cfb;
+     height: 40px;
+     padding: 10px;
+     margin-bottom: 10px;
+     margin-top: 30px;
+
+     background: #ffffff;
+     border-radius: 5px;
+
+     text-align: center;
+ }
+
+ #main_footer > h1 {
+     font-size: 1.5em;
+     font-weight: bold;
+ }
+
+ #main_footer > h2 {
+     font-size: 1.2em;
+     font-weight: bold;
+ }
+ 
+ #search_employee_table{
+ 		width: 700px;
+ }
