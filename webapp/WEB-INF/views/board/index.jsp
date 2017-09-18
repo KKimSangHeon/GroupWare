@@ -11,6 +11,7 @@
 <link href="${pageContext.servletContext.contextPath}/assets/css/board.css" rel="stylesheet" type="text/css">
 
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
 <script src="${pageContext.servletContext.contextPath }/assets/js/common.js" type="text/javascript"></script>
 <script src="${pageContext.servletContext.contextPath }/assets/js/board.js" type="text/javascript"></script>
 </head>

@@ -21,21 +21,13 @@
 	<div class="login-page">
 		<div class="form">
 		<img src="/groupware/assets/images/title.png" />
-			<form class="register-form">
-				<input type="text" placeholder="name" /> <input type="password"
-					placeholder="password" /> <input type="text"
-					placeholder="email address" />
-				<button>create</button>
-				<p class="message">
-					Already registered? <a href="#">Sign In</a>
-				</p>
-			</form>
+
 			<form class="login-form">
-				<input type="email" name="email" id="email" placeholder="please input email" /> 
-				<input type="password" name="password" id="password" placeholder="please input password" />
+				<input type="email" name="email" id="email" placeholder="사번을 입력하세요" /> 
+				<input type="password" name="password" id="password" placeholder="비밀번호를 입력하세요" />
 				<button>login</button>
 				<p class="message">
-					Not registered? <a href="join">Create an account</a>
+					계정이 없으신가요? <a href="join">회원가입</a>
 				</p>
 			</form>
 		</div>
