@@ -6,16 +6,20 @@
 
 	<insert id="insert" parameterType="uservo">
 		<![CDATA[
-		INSERT INTO EMPLOYEE(EMPLOYEE_NO,TEAM_ID,EMAIL,EMPLOYEE_NAME,PASSWORD,POSITION,CONFIRM_CHECK) 
+		INSERT INTO EMPLOYEE(EMPLOYEE_NO,TEAM_ID,EMAIL,EMPLOYEE_NAME,JOIN_DATE,POSITION,PASSWORD,CONFIRM_CHECK,LAST_LOGIN) 
 			VALUES (
 					#{employeeNo},
-					'DEV01',	
+					'DEV04',	
 					#{email},
 					#{employeeName},
+					SYSDATE,
+					'TEMP',
 					#{password},
-					#{position},
-					'0'
-					);
+					'N',
+					SYSDATE
+					)
+					
+					
 	    ]]>		
 	</insert>
 </mapper>

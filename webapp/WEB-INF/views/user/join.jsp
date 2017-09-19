@@ -38,7 +38,7 @@
 					<input type="file" name="file1">
 				</p>
 				<p>
-					<input type="text" name="name" />
+					<input type="text" name="employeeName" />
 				</p>
 				<p>
 					<input type="text" name="teamName" />

@@ -14,7 +14,6 @@ public class UserDao {
 	
 	public int insert( UserVo vo ) {
 		int count = sqlSession.insert("user.insert", vo);
-		
 		return count;
 	}	
 	
