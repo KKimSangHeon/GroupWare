@@ -39,6 +39,11 @@ public class UserController {
 		return "user/wrongaccess";
 	}
 	
+	@RequestMapping( "/notapproval" )
+	public String notApproval() {
+		return "user/notapproval";
+	}
+	
 	@RequestMapping( "/joinsuccess" )
 	public String joinSuccess() {
 		return "user/joinsuccess";

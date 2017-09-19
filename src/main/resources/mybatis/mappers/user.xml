@@ -37,7 +37,16 @@
 			parameterType="map"
 			resultType="uservo">
 		<![CDATA[
-		SELECT * 
+		SELECT EMPLOYEE_NO EMPLOYEENO,
+			TEAM_ID TEAMID,
+			EMAIL,
+			EMPLOYEE_NAME EMPLOYEENAME,
+			JOIN_DATE JOINDATE,
+			POSITION_ID POSITIONID,
+			PASSWORD,
+			ROLE,
+			CONFIRM_CHECK CONFIRMCHECK,
+			LAST_LOGIN LASTLOGIN
 		  FROM EMPLOYEE 
 		 WHERE EMPLOYEE_NO=#{employeeNo }
 		   AND PASSWORD=#{password }
@@ -46,9 +55,27 @@
 
 	<select id="getByNo" parameterType="long" resultType="uservo">
 		<![CDATA[
-		SELECT *
+		SELECT EMPLOYEE_NO EMPLOYEENO,
+			TEAM_ID TEAMID,
+			EMAIL,
+			EMPLOYEE_NAME EMPLOYEENAME,
+			JOIN_DATE JOINDATE,
+			POSITION_ID POSITIONID,
+			PASSWORD,
+			ROLE,
+			CONFIRM_CHECK CONFIRMCHECK,
+			LAST_LOGIN LASTLOGIN
 		  FROM EMPLOYEE 
 		 WHERE EMPLOYEE_NO=#{employeeNo }
 		]]>
 	</select>
+	
+		<update id="updateLoginTime" parameterType="uservo">
+		<![CDATA[
+			UPDATE EMPLOYEE
+			SET LAST_LOGIN = SYSDATE
+			WHERE EMPLOYEE_NO = #{employeeNo }
+		
+		]]>
+	</update>		
 </mapper>

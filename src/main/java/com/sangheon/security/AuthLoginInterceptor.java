@@ -28,10 +28,18 @@ public class AuthLoginInterceptor extends HandlerInterceptorAdapter {
 		
 		
 		UserVo userVo = userService.getUser(employeeNo, password);
+		userService.updateLoginTime(employeeNo);
 		
 		if( userVo == null ) {
 			response.sendRedirect( request.getContextPath() + "/user/login" );
 			return false;
+		}
+		
+		//승인받지 않은 회원일경우
+		if( userVo.getConfirmCheck().equals("N")) {
+			response.sendRedirect( request.getContextPath() + "/user/notapproval" );
+			return false;
+			
 		}
 		
 		// session 처리

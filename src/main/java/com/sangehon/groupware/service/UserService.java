@@ -23,4 +23,8 @@ public class UserService {
 	public UserVo getUser(String no,String password) {
 		return userDao.get(no,password);
 	}
+	
+	public int updateLoginTime(String no) {
+		return userDao.updateLoginTime(no);
+	}
 }

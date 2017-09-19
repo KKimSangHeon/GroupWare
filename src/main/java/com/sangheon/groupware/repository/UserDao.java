@@ -35,4 +35,8 @@ public class UserDao {
 		return vo;
 	}
 	
+	public int updateLoginTime( String employeeNo) {
+		return sqlSession.update("user.updateLoginTime", employeeNo );
+		
+	}
 }

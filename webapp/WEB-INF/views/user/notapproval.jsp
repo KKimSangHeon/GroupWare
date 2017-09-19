@@ -12,7 +12,7 @@
 <body>
 	<c:import url="/WEB-INF/views/includes/header.jsp"/>
 		<div id="content">
-					<h1>잘못된 접근입니다.</h1>
+					<h1>아직 가입승인이 되지 않았습니다..</h1>
 		</div>
 </body>
 </html>

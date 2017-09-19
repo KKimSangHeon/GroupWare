@@ -6,7 +6,7 @@ public class UserVo {
 	private String email;
 	private String employeeName;
 	private String password;
-	private String position; // 직급
+	private String positionid; // 직급
 	private String joinDate;
 	private String confirmCheck; // 인증여부
 	private String lastLogin;
@@ -47,11 +47,11 @@ public class UserVo {
 	}
 
 	public String getPosition() {
-		return position;
+		return positionid;
 	}
 
 	public void setPosition(String position) {
-		this.position = position;
+		this.positionid = position;
 	}
 
 	public String getJoinDate() {
