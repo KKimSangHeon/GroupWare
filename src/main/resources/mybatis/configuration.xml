@@ -3,10 +3,12 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="uservo" type="com.sangheon.groupware.vo.UserVo"/>
+		<typeAlias alias="boardvo" type="com.sangheon.groupware.vo.BoardVo"/>
     </typeAliases>	
 	
 	<mappers>
 		<mapper resource="mybatis/mappers/user.xml"/>
+		<mapper resource="mybatis/mappers/board.xml"/>
 	</mappers>
 	
 </configuration>
