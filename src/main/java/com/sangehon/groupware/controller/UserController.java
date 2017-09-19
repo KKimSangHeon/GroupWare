@@ -28,6 +28,17 @@ public class UserController {
 		return "redirect:/user/joinsuccess";
 	}
 	
+	@RequestMapping(value="/login", method=RequestMethod.GET)
+	public String login() {
+		return "user/login";
+	}
+	
+	
+	@RequestMapping( "/wrongaccess" )
+	public String wrongAccess() {
+		return "user/wrongaccess";
+	}
+	
 	@RequestMapping( "/joinsuccess" )
 	public String joinSuccess() {
 		return "user/joinsuccess";

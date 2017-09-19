@@ -6,20 +6,49 @@
 
 	<insert id="insert" parameterType="uservo">
 		<![CDATA[
-		INSERT INTO EMPLOYEE(EMPLOYEE_NO,TEAM_ID,EMAIL,EMPLOYEE_NAME,JOIN_DATE,POSITION,PASSWORD,CONFIRM_CHECK,LAST_LOGIN) 
-			VALUES (
-					#{employeeNo},
-					'DEV04',	
-					#{email},
-					#{employeeName},
-					SYSDATE,
-					'TEMP',
-					#{password},
-					'N',
-					SYSDATE
-					)
-					
-					
-	    ]]>		
+	INSERT INTO 
+		EMPLOYEE(
+				EMPLOYEE_NO,
+				TEAM_ID,
+				EMAIL,
+				EMPLOYEE_NAME,
+				JOIN_DATE,
+				POSITION_ID,
+				PASSWORD,
+				CONFIRM_CHECK,
+				ROLE,
+				LAST_LOGIN) 
+		VALUES (
+				#{employeeNo},
+				'DEV04',	
+				#{email},
+				#{employeeName},
+				SYSDATE,
+				'TEMP',
+				#{password},
+				'N',
+				'USER',
+				SYSDATE
+				)
+	    ]]>
 	</insert>
+
+	<select id="getByemployeeNoAndPassword" 
+			parameterType="map"
+			resultType="uservo">
+		<![CDATA[
+		SELECT * 
+		  FROM EMPLOYEE 
+		 WHERE EMPLOYEE_NO=#{employeeNo }
+		   AND PASSWORD=#{password }
+		]]>
+	</select>
+
+	<select id="getByNo" parameterType="long" resultType="uservo">
+		<![CDATA[
+		SELECT *
+		  FROM EMPLOYEE 
+		 WHERE EMPLOYEE_NO=#{employeeNo }
+		]]>
+	</select>
 </mapper>

@@ -22,12 +22,12 @@
 		<div class="form">
 		<img src="/groupware/assets/images/title.png" />
 
-			<form class="login-form">
-				<input type="email" name="email" id="email" placeholder="사번을 입력하세요" /> 
+			<form class="login-form" name="loginform" method="post" action="${pageContext.servletContext.contextPath }/user/auth">
+				<input  name="employeeNo" id="employeeNo" placeholder="사번을 입력하세요" /> 
 				<input type="password" name="password" id="password" placeholder="비밀번호를 입력하세요" />
 				<button>login</button>
 				<p class="message">
-					계정이 없으신가요? <a href="user/join">회원가입</a>
+					계정이 없으신가요? <a href="${pageContext.servletContext.contextPath }/user/join">회원가입</a>
 				</p>
 			</form>
 		</div>

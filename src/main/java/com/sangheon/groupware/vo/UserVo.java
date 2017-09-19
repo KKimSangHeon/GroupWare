@@ -10,7 +10,8 @@ public class UserVo {
 	private String joinDate;
 	private String confirmCheck; // 인증여부
 	private String lastLogin;
-
+	private String role;
+	
 	public String getEmployeeNo() {
 		return employeeNo;
 	}
@@ -83,6 +84,13 @@ public class UserVo {
 
 	public void setEmployeeName(String employeenName) {
 		this.employeeName = employeenName;
+	}
+	
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 }

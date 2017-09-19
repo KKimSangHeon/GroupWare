@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MainController {
 	
-	@RequestMapping( { "/", "/login" })
+	@RequestMapping(  "/" )
 	public String login() {
-		return "main/login";
+		return "user/login";
 	}
 	
 	@RequestMapping( "/main")
@@ -17,10 +17,6 @@ public class MainController {
 	
 	
 	
-	@RequestMapping( "/join")
-	public String join() {
-		return "main/join";
-	}	
 	
 	
 	

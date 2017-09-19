@@ -16,5 +16,11 @@ public class UserService {
 		return userDao.insert( userVo ) == 1;
 	}
 	
+	public UserVo getUser(String no) {
+		return userDao.get(no);
+	}
 	
+	public UserVo getUser(String no,String password) {
+		return userDao.get(no,password);
+	}
 }
