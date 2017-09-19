@@ -13,8 +13,7 @@
         http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 	
 	<context:annotation-config />
-
-	<context:component-scan base-package="com.sangheon.groupware.repository, com.sangheon.groupware.service, com.sangheon.groupware.exception">
+	<context:component-scan base-package="com.sangheon.groupware.repository, com.sangehon.groupware.service, com.sangheon.groupware.exception">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Repository" />
 		<context:include-filter type="annotation"
@@ -26,8 +25,8 @@
 	<!-- oracle datasource -->
     <bean id="oracleDatasource" class="oracle.jdbc.pool.OracleDataSource" destroy-method="close">
         <property name="URL" value="jdbc:oracle:thin:@localhost:1521:xe" />
-        <property name="user" value="webdb" />
-        <property name="password" value="webdb" />
+        <property name="user" value="sh" />
+        <property name="password" value="sh" />
         <property name="connectionCachingEnabled" value="true" />
         <qualifier value="main-db" />
     </bean>

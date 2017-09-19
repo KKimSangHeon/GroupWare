@@ -4,7 +4,7 @@ public class UserVo {
 	private String employeeNo;
 	private String teamId;
 	private String email;
-	private String employeenName;
+	private String employeeName;
 	private String password;
 	private String position; // 직급
 	private String joinDate;
@@ -77,12 +77,12 @@ public class UserVo {
 		this.lastLogin = lastLogin;
 	}
 
-	public String getEmployeenName() {
-		return employeenName;
+	public String getEmployeeName() {
+		return employeeName;
 	}
 
-	public void setEmployeenName(String employeenName) {
-		this.employeenName = employeenName;
+	public void setEmployeeName(String employeenName) {
+		this.employeeName = employeenName;
 	}
 
 }

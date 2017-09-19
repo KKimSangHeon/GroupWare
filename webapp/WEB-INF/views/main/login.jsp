@@ -27,7 +27,7 @@
 				<input type="password" name="password" id="password" placeholder="비밀번호를 입력하세요" />
 				<button>login</button>
 				<p class="message">
-					계정이 없으신가요? <a href="join">회원가입</a>
+					계정이 없으신가요? <a href="user/join">회원가입</a>
 				</p>
 			</form>
 		</div>
