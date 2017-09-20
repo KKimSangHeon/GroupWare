@@ -11,16 +11,21 @@
 
 
 	<div class="login_menu">
-
-				<span> ${authUser.employeeName } ${authUser.positionName }님 반갑습니다. 
-					<c:if test="${authUser.role == 'ADMIN' }">
+		<c:choose>
+			<c:when test="${empty authUser }">
+			
+			</c:when>
+			<c:otherwise>
+				<span> ${authUser.employeeName } ${authUser.positionName }님
+					반갑습니다. <c:if test="${authUser.role == 'ADMIN' }">
 						<a href="${pageContext.servletContext.contextPath }/admin">관리페이지</a>
-					</c:if> 
-						<a href="${pageContext.servletContext.contextPath }/user/logout">로그아웃</a>
+					</c:if> <a href="${pageContext.servletContext.contextPath }/user/logout">로그아웃</a>
 
 				</span>
-				<span>
-					<br><br>최근로그인: ${authUser.lastLogin }
+				<span> <br>
+				<br>최근로그인: ${authUser.lastLogin }
 				</span>
+			</c:otherwise>
+		</c:choose>
 	</div>
 </header>
