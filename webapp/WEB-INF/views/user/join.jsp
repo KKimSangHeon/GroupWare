@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="form-wrap">
-		<form id="login-form" name="loginform" method="post" action="${pageContext.servletContext.contextPath }/user/join" >
+		<form  name="loginform" method="post" action="${pageContext.servletContext.contextPath }/user/join" >
 			<img src="/groupware/assets/images/title.png" />
 			<div>
 				<p id="join">회원가입</p>

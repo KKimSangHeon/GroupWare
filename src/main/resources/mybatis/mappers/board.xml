@@ -5,6 +5,10 @@
 
 
 	<select id="getBoardList" resultType="boardvo">
-		SELECT NAME,ID FROM BOARD
+		SELECT BOARD_NAME BOARDNAME,
+			BOARD_ID BOARDID,
+			BOARD_AUTHORITY BOARDAUTHORITY,
+			IS_TEAM ISTEAM
+     	FROM BOARD
 	</select>
 </mapper>

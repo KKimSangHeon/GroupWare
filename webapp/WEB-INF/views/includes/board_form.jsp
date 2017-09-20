@@ -50,6 +50,11 @@
 	</tbody>
 </table>
 <br />
-<a href="${pageContext.request.contextPath }/board/write?boardId=${boardId }&boardName=${boardName}" class="btn" id="write">글쓰기</a>
-
+	
+	<fmt:parseNumber var ='i' type = "number" value="${authUser.positionId} }"/>
+	<fmt:parseNumber var ='j' type = "number" value="${boardAuthority }"/>
+	<c:if test="${ i <= j }">
+		
+		<a href="${pageContext.request.contextPath }/board/write?boardId=${boardId }&boardName=${boardName}" class="btn" id="write">글쓰기</a>
+	</c:if> 
 

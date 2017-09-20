@@ -9,7 +9,7 @@
 	<c:forEach items="${boardList }"	var="vo" varStatus="status">	
 	<span>
 		<img src="/groupware/assets/images/board_icon.png" />
-		<a href="${pageContext.request.contextPath }/board?boardId=${vo.id}">${vo.name} </a> 
+		<a href="${pageContext.request.contextPath }/board?boardId=${vo.boardId}">${vo.boardName} </a> 
 	</span>
 
 	

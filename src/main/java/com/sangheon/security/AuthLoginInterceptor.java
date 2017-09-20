@@ -36,7 +36,7 @@ public class AuthLoginInterceptor extends HandlerInterceptorAdapter {
 		}
 		
 		//승인받지 않은 회원일경우
-		if( userVo.getConfirmCheck().equals("N")) {
+		if( userVo.getIsAuthority().equals("N")) {
 			response.sendRedirect( request.getContextPath() + "/user/notapproval" );
 			return false;
 			

@@ -25,8 +25,7 @@
 
 	<c:import url="/WEB-INF/views/includes/header.jsp" />
 	<c:import url="/WEB-INF/views/includes/top_gnb.jsp" />
-	<div id="formDiv">
-		<form id="boardWriteForm">
+		<form name="boardWriteForm" method="post" action="${pageContext.servletContext.contextPath }/board/write">
 			<table class="board_view">
 				<colgroup>
 					<col width="15%">
@@ -36,27 +35,26 @@
 				<tbody>
 					<tr>
 						<th scope="row">제목</th>
-						<td><input type="text" id="TITLE" name="TITLE" class="wdp_90"></input></td>
+						<td><input type="text" id="boardTitle" name="boardTitle" class="wdp_90"></input></td>
 					</tr>
 					<tr>
 						<td colspan="2" class="view_text"><textarea rows="20"
-								cols="110" title="내용" id="CONTENTS" name="CONTENTS"></textarea></td>
+								cols="110" title="내용" id="content" name="content"></textarea></td>
 					</tr>
 
 				</tbody>
 
 			</table>
-			<input type="hidden" id="employeeId" name="employeeNo"
-				value=${authUser.employeeNo }>
+			<input type="hidden" id="employeeNo" name="employeeNo" value=${authUser.employeeNo }>
+			<input type="hidden" id="boardId" name="boardId" value=${boardId }>
 			<div class="right">
-				<span>
-					<button id="submit">작성하기</button> <a href="#this" class="right"
-					id="list">목록으로</a>
-				</span>
+					<button id="submit">작성하기</button> 
+					<button type="button"  onclick = "location.href = '${pageContext.servletContext.contextPath }/board?boardId=${boardId }' ">돌아가기</button>
 			</div>
+				<span>
+				</span>
 		</form>
 
-	</div>
 
 
 	<c:import url="/WEB-INF/views/includes/footer.jsp" />

@@ -6,12 +6,21 @@ public class UserVo {
 	private String email;
 	private String employeeName;
 	private String password;
-	private String positionid; // 직급
+	private String positionId; // 직급
 	private String joinDate;
-	private String confirmCheck; // 인증여부
+	private String isAuthority; // 인증여부
 	private String lastLogin;
 	private String role;
 	
+
+	public String getIsAuthority() {
+		return isAuthority;
+	}
+
+	public void setIsAuthority(String isAuthority) {
+		this.isAuthority = isAuthority;
+	}
+
 	public String getEmployeeNo() {
 		return employeeNo;
 	}
@@ -46,12 +55,12 @@ public class UserVo {
 		this.password = password;
 	}
 
-	public String getPosition() {
-		return positionid;
+	public String getPositionId() {
+		return positionId;
 	}
 
-	public void setPosition(String position) {
-		this.positionid = position;
+	public void setPosition(String positionId) {
+		this.positionId = positionId;
 	}
 
 	public String getJoinDate() {
@@ -62,13 +71,7 @@ public class UserVo {
 		this.joinDate = joinDate;
 	}
 
-	public String getConfirmCheck() {
-		return confirmCheck;
-	}
 
-	public void setConfirmCheck(String confirmCheck) {
-		this.confirmCheck = confirmCheck;
-	}
 
 	public String getLastLogin() {
 		return lastLogin;
