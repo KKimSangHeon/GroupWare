@@ -11,4 +11,19 @@
 			IS_TEAM ISTEAM
      	FROM BOARD
 	</select>
+	
+	<insert id="newContent" parameterType="map">
+		INSERT INTO 
+			CONTENT 
+		VALUES(
+			'${contentId}'	,			
+			'${employeeNo}',			
+			'${contentTitle}',		
+			'${contentContent}',		
+			'${teamId}',		
+			'${boardId}',		
+			SYSDATE	
+		)
+	
+	</insert>
 </mapper>

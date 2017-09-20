@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.sangheon.groupware.repository.BoardDao;
 import com.sangheon.groupware.vo.BoardVo;
+import com.sangheon.groupware.vo.UserVo;
 
 @Service
 public class BoardService {
@@ -17,5 +18,10 @@ public class BoardService {
 	public List<BoardVo> getBoardList() {
 		List<BoardVo> list = boardDao.getBoardList();
 		return list;
+	}
+	
+	
+	public boolean newContent( UserVo userVo ,BoardVo boardVo) {
+		return boardDao.newContent( userVo,boardVo ) == 1;
 	}
 }

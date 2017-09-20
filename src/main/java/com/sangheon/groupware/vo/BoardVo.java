@@ -1,6 +1,6 @@
 package com.sangheon.groupware.vo;
 
-public class BoardVo {
+public class BoardVo extends ContentVo{
 	private String id;
 	private String name;
 	private String boardName;

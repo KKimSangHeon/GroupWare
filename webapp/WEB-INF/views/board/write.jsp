@@ -35,17 +35,18 @@
 				<tbody>
 					<tr>
 						<th scope="row">제목</th>
-						<td><input type="text" id="boardTitle" name="boardTitle" class="wdp_90"></input></td>
+						<td><input type="text" id="contentTitle" name="contentTitle" class="wdp_90"></input></td>
 					</tr>
 					<tr>
 						<td colspan="2" class="view_text"><textarea rows="20"
-								cols="110" title="내용" id="content" name="content"></textarea></td>
+								cols="110" title="내용" id="contentContent" name="contentContent"></textarea></td>
 					</tr>
 
 				</tbody>
 
 			</table>
 			<input type="hidden" id="employeeNo" name="employeeNo" value=${authUser.employeeNo }>
+			<input type="hidden" id="employeeNo" name="teamId" value=${authUser.teamId }>
 			<input type="hidden" id="boardId" name="boardId" value=${boardId }>
 			<div class="right">
 					<button id="submit">작성하기</button> 

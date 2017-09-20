@@ -4,6 +4,7 @@
 	<typeAliases>
 		<typeAlias alias="uservo" type="com.sangheon.groupware.vo.UserVo"/>
 		<typeAlias alias="boardvo" type="com.sangheon.groupware.vo.BoardVo"/>
+		<typeAlias alias="contentvo" type="com.sangheon.groupware.vo.ContentVo"/>
     </typeAliases>	
 	
 	<mappers>

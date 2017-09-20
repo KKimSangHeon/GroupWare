@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sangehon.groupware.service.BoardService;
 import com.sangheon.groupware.vo.BoardVo;
+import com.sangheon.groupware.vo.ContentVo;
+import com.sangheon.groupware.vo.UserVo;
 import com.sangheon.security.Auth;
 
 @Auth
@@ -68,7 +70,12 @@ public class BoardController {
 	}
 
 	@RequestMapping( value="/write", method=RequestMethod.POST )
-	public String write( @ModelAttribute BoardVo boardVo ) {
+	public String write( @ModelAttribute BoardVo boardVo, @ModelAttribute UserVo userVo) {
+		
+		
+		boardService.newContent(userVo,boardVo);
+		
+		
 		return "redirect:/board?boardId="+boardVo.getBoardId();		
 	}
 }
