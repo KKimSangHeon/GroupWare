@@ -46,7 +46,7 @@
 
 			</table>
 			<input type="hidden" id="employeeNo" name="employeeNo" value=${authUser.employeeNo }>
-			<input type="hidden" id="employeeNo" name="teamId" value=${authUser.teamId }>
+			<input type="hidden" id="teamId" name="teamId" value=${authUser.teamId }>
 			<input type="hidden" id="boardId" name="boardId" value=${boardId }>
 			<div class="right">
 					<button id="submit">작성하기</button> 

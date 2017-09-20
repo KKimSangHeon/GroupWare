@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sangehon.groupware.service.BoardService;
 import com.sangheon.groupware.vo.BoardVo;
-import com.sangheon.groupware.vo.ContentVo;
 import com.sangheon.groupware.vo.UserVo;
 import com.sangheon.security.Auth;
+import com.sangheon.security.AuthUser;
 
 @Auth
 @Controller
@@ -27,6 +27,7 @@ public class BoardController {
 	@RequestMapping("")
 	public String index(@RequestParam(value = "p", required = true, defaultValue = "1") Integer page,
 						@RequestParam(value = "boardId", required = true, defaultValue = "NOTICE") String boardId, 
+						@AuthUser UserVo authUser, 
 						Model model) {
 
 		String boardName="";
@@ -34,8 +35,6 @@ public class BoardController {
 		String isTeam="";
 		
 		List<BoardVo> boardList = boardService.getBoardList();
-		
-		
 		
 		for(int i=0;i<boardList.size();i++) {
 			
@@ -48,13 +47,26 @@ public class BoardController {
 			}
 		}
 		
-		
 		model.addAttribute("boardId", boardId);	
 		model.addAttribute("boardName", boardName);		
 		model.addAttribute("isTeam", isTeam);	
 		model.addAttribute("boardAuthority", boardAuthority);	
 		model.addAttribute("boardList", boardList);
-
+		
+		
+		BoardVo boardVo = new BoardVo();
+		boardVo.setBoardId(boardId);
+		boardVo.setBoardName(boardName);
+		boardVo.setIsTeam(isTeam);
+		boardVo.setEmployeeNo(authUser.getEmployeeNo());
+		boardVo.setTeamId(authUser.getTeamId());
+		
+		List<BoardVo> list = 
+				boardService.getContentList( boardVo );
+		
+		model.addAttribute( "list", list );
+		
+		
 		return "board/index";
 	}
 
@@ -72,9 +84,7 @@ public class BoardController {
 	@RequestMapping( value="/write", method=RequestMethod.POST )
 	public String write( @ModelAttribute BoardVo boardVo, @ModelAttribute UserVo userVo) {
 		
-		
-		boardService.newContent(userVo,boardVo);
-		
+		boardService.newContent(boardVo);
 		
 		return "redirect:/board?boardId="+boardVo.getBoardId();		
 	}

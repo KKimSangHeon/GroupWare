@@ -20,8 +20,20 @@ public class BoardService {
 		return list;
 	}
 	
+	public List<BoardVo> getContentList(BoardVo boardVo) {
+		List<BoardVo> list =null;
+		if(boardVo.getIsTeam().equals("N")) {
+			list = boardDao.getContentList(boardVo);
+		}
+		else {
+			list = boardDao.getContentListByTeam(boardVo);
+			System.out.println(boardVo.getTeamId());
+		}
+		
+		return list;
+	}
 	
-	public boolean newContent( UserVo userVo ,BoardVo boardVo) {
-		return boardDao.newContent( userVo,boardVo ) == 1;
+	public boolean newContent(BoardVo boardVo) {
+		return boardDao.newContent(boardVo ) == 1;
 	}
 }

@@ -19,3 +19,6 @@
               font-size: 1.0em;
               color: #000000;
         }
+        .login_menu> span{
+       		 margin-right:0px; 
+        }

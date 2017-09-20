@@ -7,8 +7,16 @@ public class BoardVo extends ContentVo{
 	private String boardId;
 	private String isTeam;
 	private String boardAuthority;
+	private String no;
 	
 	
+	
+	public String getNo() {
+		return no;
+	}
+	public void setNo(String no) {
+		this.no = no;
+	}
 	public String getIsTeam() {
 		return isTeam;
 	}

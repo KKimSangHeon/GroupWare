@@ -1,6 +1,6 @@
 package com.sangheon.groupware.vo;
 
-public class ContentVo {
+public class ContentVo extends UserVo{
 	private String contentId;
 	private String employeeNo;
 	private String contentTitle;

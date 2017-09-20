@@ -1,5 +1,6 @@
 package com.sangheon.groupware.repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sangheon.groupware.vo.BoardVo;
-import com.sangheon.groupware.vo.UserVo;
 
 
 @Repository
@@ -22,15 +22,15 @@ public class BoardDao {
 		return sqlSession.selectList( "board.getBoardList" );
 	}
 	
-	public int newContent( UserVo userVo, BoardVo boardVo ) {
+	public int newContent( BoardVo boardVo ) {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put( "employeeNo", userVo.getEmployeeNo() );
+		map.put( "employeeNo", boardVo.getEmployeeNo() );
 		map.put( "contentTitle", boardVo.getContentTitle() );
 		map.put( "contentContent", boardVo.getContentContent() );
-		map.put( "teamId", userVo.getTeamId() );
+		map.put( "teamId", boardVo.getTeamId() );
 		map.put( "boardId", boardVo.getBoardId() );
-		map.put( "contentId", boardVo.getContentTitle()+userVo.getEmployeeNo());
+		map.put( "contentId", boardVo.getContentTitle()+boardVo.getEmployeeNo());
 		
 		
 		
@@ -38,4 +38,12 @@ public class BoardDao {
 
 		return count;
 	}	
+	public List<BoardVo> getContentList(BoardVo boardVo ) {
+
+		return sqlSession.selectList( "board.getContentList",boardVo );
+	}
+	public List<BoardVo> getContentListByTeam(BoardVo boardVo ) {
+
+		return sqlSession.selectList( "board.getContentListByTeam",boardVo );
+	}
 }

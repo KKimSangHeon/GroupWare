@@ -18,7 +18,7 @@
 		<tr>
 			<th scope="col">글번호</th>
 			<th scope="col">제목</th>
-			<th scope="col">조회수</th>
+			<th scope="col">작성자</th>
 			<th scope="col">작성일</th>
 
 		</tr>
@@ -29,13 +29,13 @@
                 <c:when test="${fn:length(list) > 0}">
                     <c:forEach items="${list }" var="row">
                         <tr>
-                            <td>${row.IDX }</td>
+                            <td>${row.no }</td>
                             <td class="title">
-                                <a href="#this" name="title">${row.TITLE }</a>
-                                <input type="hidden" id="IDX" value="${row.IDX }">
+                                <a href="#this">${row.contentTitle }</a>
+                                <input type="hidden" id="IDX" value="${row.no }">
                             </td>
-                            <td>${row.HIT_CNT }</td>
-                            <td>${row.CREA_DTM }</td>
+                            <td>${row.employeeName }</td>
+                            <td>${row.writeDate }</td>
                         </tr>
                     </c:forEach>
                 </c:when>

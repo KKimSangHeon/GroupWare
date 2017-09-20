@@ -11,7 +11,20 @@ public class UserVo {
 	private String isAuthority; // 인증여부
 	private String lastLogin;
 	private String role;
+	private String positionName;
 	
+
+	public String getPositionName() {
+		return positionName;
+	}
+
+	public void setPositionName(String positionName) {
+		this.positionName = positionName;
+	}
+
+	public void setPositionId(String positionId) {
+		this.positionId = positionId;
+	}
 
 	public String getIsAuthority() {
 		return isAuthority;
