@@ -15,3 +15,12 @@ function changeActiveGnb(itemNum){
 }
 
 
+function changeActiveGlobal_Aside(boardName){
+		
+	$('#boardList a').each(function(index, item) {
+		
+		if($(this).text().substring(0,$(this).text().length-1) == boardName){
+		$(this).css('color','red');
+	}
+	});
+}

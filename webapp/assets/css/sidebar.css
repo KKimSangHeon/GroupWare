@@ -13,16 +13,16 @@
             padding: 10px;
         }
 
-        #global_aside > span {
+        #global_aside  span {
             display: block;
             padding-bottom: 10px;
         }
         
-        #global_aside > span > a {
+        #global_aside  span > a {
 			margin-bottom: 5px;
               color: #000000;
         }
         
-        #global_aside > span > img {
+        #global_aside  span > img {
 			margin-top: 5px;
         }
