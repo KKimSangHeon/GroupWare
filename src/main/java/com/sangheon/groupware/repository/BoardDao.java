@@ -1,6 +1,7 @@
 package com.sangheon.groupware.repository;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,9 +31,10 @@ public class BoardDao {
 		map.put( "contentContent", boardVo.getContentContent() );
 		map.put( "teamId", boardVo.getTeamId() );
 		map.put( "boardId", boardVo.getBoardId() );
-		map.put( "contentId", boardVo.getContentTitle()+boardVo.getEmployeeNo());
-		
-		
+		Calendar calendar = Calendar.getInstance();
+		map.put( "contentId", boardVo.getEmployeeNo()+calendar.get( Calendar.YEAR )+calendar.get( Calendar.MONTH )+
+				calendar.get( Calendar.DATE )+calendar.get( Calendar.HOUR )+calendar.get( Calendar.MINUTE )+
+				calendar.get( Calendar.SECOND )+calendar.get( Calendar.MILLISECOND ));
 		
 		int count = sqlSession.insert("board.newContent", map);
 

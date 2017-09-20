@@ -1,5 +1,6 @@
 package com.sangehon.groupware.service;
 
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.sangheon.groupware.repository.BoardDao;
 import com.sangheon.groupware.vo.BoardVo;
-import com.sangheon.groupware.vo.UserVo;
 
 @Service
 public class BoardService {
@@ -34,6 +34,15 @@ public class BoardService {
 	}
 	
 	public boolean newContent(BoardVo boardVo) {
+		
+		
+		
+		
+		
+		
+		
+
+		
 		return boardDao.newContent(boardVo ) == 1;
 	}
 }
