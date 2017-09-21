@@ -16,12 +16,12 @@
 		INSERT INTO 
 			CONTENT 
 		VALUES(
-			'${contentId}'	,			
-			'${employeeNo}',			
-			'${contentTitle}',		
-			'${contentContent}',		
-			'${teamId}',		
-			'${boardId}',		
+			#{contentId},			
+			#{employeeNo},			
+			#{contentTitle},		
+			#{contentContent},		
+			#{teamId},		
+			#{boardId},		
 			SYSDATE	
 		)
 	
@@ -38,7 +38,7 @@
 				   TO_CHAR(WRITE_DATE,'YYYY-MM-DD') WRITEDATE ,
 				   ROWNUM NO
 			FROM CONTENT
-			WHERE BOARD_ID = '${boardId}'	
+			WHERE BOARD_ID = #{boardId}	
 			)
 			ORDER BY NO DESC
 		]]>
@@ -55,8 +55,8 @@
 				   TO_CHAR(WRITE_DATE,'YYYY-MM-DD') WRITEDATE ,
 				   ROWNUM NO
 			FROM CONTENT
-			WHERE BOARD_ID = '${boardId}'
-			AND	  TEAM_ID=	'${teamId}'
+			WHERE BOARD_ID = #{boardId}
+			AND	  TEAM_ID=	#{teamId}
 			)
 			ORDER BY NO DESC
 		]]>

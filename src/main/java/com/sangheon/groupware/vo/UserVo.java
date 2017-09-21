@@ -12,7 +12,16 @@ public class UserVo {
 	private String lastLogin;
 	private String role;
 	private String positionName;
+	private String imageUrl;
 	
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 
 	public String getPositionName() {
 		return positionName;

@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="form-wrap">
-		<form  name="loginform" method="post" action="${pageContext.servletContext.contextPath }/user/join" >
+		<form  name="loginform" method="post" action="${pageContext.servletContext.contextPath }/user/join" enctype="multipart/form-data" >
 			<img src="/groupware/assets/images/title.png" />
 			<div>
 				<p id="join">회원가입</p>
@@ -35,7 +35,7 @@
 					<input type="password" name="password" /> (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)
 				</p>
 				<p>
-					<input type="file" name="file1">
+					<input type="file" name="file">
 				</p>
 				<p>
 					<input type="text" name="employeeName" />

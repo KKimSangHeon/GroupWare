@@ -17,7 +17,8 @@
 				PASSWORD,
 				IS_AUTHORITY,
 				ROLE,
-				LAST_LOGIN) 
+				LAST_LOGIN,
+				IMAGE_URL) 
 		VALUES (
 				#{employeeNo},
 				'DEV04',	
@@ -28,7 +29,8 @@
 				#{password},
 				'N',
 				'USER',
-				SYSDATE
+				SYSDATE,
+				#{imageUrl}
 				)
 	    ]]>
 	</insert>
