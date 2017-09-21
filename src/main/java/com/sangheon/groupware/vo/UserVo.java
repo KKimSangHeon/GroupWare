@@ -3,6 +3,7 @@ package com.sangheon.groupware.vo;
 public class UserVo {
 	private String employeeNo;
 	private String teamId;
+	private String teamName;
 	private String email;
 	private String employeeName;
 	private String password;
@@ -14,6 +15,14 @@ public class UserVo {
 	private String positionName;
 	private String imageUrl;
 	
+
+	public String getTeamName() {
+		return teamName;
+	}
+
+	public void setTeamName(String teamName) {
+		this.teamName = teamName;
+	}
 
 	public String getImageUrl() {
 		return imageUrl;

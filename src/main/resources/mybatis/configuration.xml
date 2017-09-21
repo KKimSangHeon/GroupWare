@@ -10,6 +10,7 @@
 	<mappers>
 		<mapper resource="mybatis/mappers/user.xml"/>
 		<mapper resource="mybatis/mappers/board.xml"/>
+		<mapper resource="mybatis/mappers/searchemployee.xml"/>
 	</mappers>
 	
 </configuration>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="searchEmployee">
+
+	<select id="getEmployeeList" resultType="uservo">
+	SELECT EMPLOYEE_NAME EMPLOYEENAME,
+		   IMAGE_URL IMAGEURL,
+		   (SELECT TEAM_NAME FROM TEAM WHERE TEAM_ID=EMPLOYEE.TEAM_ID) TEAMNAME,
+		   (SELECT POSITION_NAME FROM POSITION WHERE POSITION_ID = EMPLOYEE.POSITION_ID) POSITIONNAME
+	FROM EMPLOYEE
+	WHERE 1=1
+	  	 <if test="teamId != ''">
+			  	AND   TEAM_ID=#{teamId },
+		 </if>
+		 <if test="employeeName != ''">
+			  	AND   EMPLOYEE_NAME=#{employeeName },
+		 </if>
+	</select>
+	
+</mapper>

@@ -34,20 +34,20 @@
 
 
             <div class="wrap">
-	    	<form id="search_employee_form" name="NlfsAcnutVO" onsubmit="return false;">
-				<table id="search_employee_table">
+	    	<form id="searchEmployeeForm" name="searchEmployeeForm">
+				<table id="searchEmployeeTable">
 					<tbody>
 					<tr >
-						<th scope="row" >부서</th>
+						<th scope="row" >팀명</th>
 						<td colspan="2">
-							<input type="text" size=30 id="search_employee_department" name="department" >
+							<input type="text" size=30 id="teamId" name="teamId" >
 						</td>
 						<th scope="row" >이름</th>
 						<td colspan="2">
-							<input type="text" size=30  class="long" id="search_employee_name" name="name">							
+							<input type="text" size=30  id="employeeName" name="employeeName">							
 						</td>
 						<td>
-							<button type="button" class="search" id="search_employee_btnRetrieve" tabindex="3">검색</button>
+							<button type="button" class="search" id="searchEmployeeButton" tabindex="3">검색</button>
 						</td>
 					</tr>					
 					</tbody>					
@@ -57,6 +57,7 @@
 
 <div id = "list_div">
 <table id="list"></table>
+
 </div>
 <c:import url="/WEB-INF/views/includes/footer.jsp"/>
 
