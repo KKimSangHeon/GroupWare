@@ -30,9 +30,6 @@ public class SearchEmployeeController {
 	@RequestMapping( value="", method=RequestMethod.POST )
 	public JSONResult view(@ModelAttribute UserVo userVo) {
 		
-		System.out.println(userVo.getEmployeeName()+"ttttttttt");
-		System.out.println(userVo.getTeamId()+"ttttttttt");
-		
 		List<UserVo> list = searchEmployeeService.getEmployeeList(userVo);
 		
 		return JSONResult.success(list);

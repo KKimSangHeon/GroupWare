@@ -11,10 +11,14 @@
 	FROM EMPLOYEE
 	WHERE 1=1
 	  	 <if test="teamId != ''">
-			  	AND   TEAM_ID=#{teamId },
+	  	 <![CDATA[	
+			  	AND   TEAM_ID=#{teamId }
+			  	]]>  
 		 </if>
 		 <if test="employeeName != ''">
-			  	AND   EMPLOYEE_NAME=#{employeeName },
+		  <![CDATA[	
+			  	AND   EMPLOYEE_NAME= #{employeeName }
+			  	]]>  
 		 </if>
 	</select>
 	
