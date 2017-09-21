@@ -4,26 +4,31 @@ function initGrid() {
         //로컬그리드이용
         datatype: "local",
         //그리드 높이
-        height: 250,
+        height: 700,
         //컬럼명들
-        colNames:['사진','이름', '소속', '직급'],
+        colNames:['사진','이름', '소속', '직급','이메일'],
         //컬럼모델
         colModel:[
-            {name:'imageUrl',align:"center"},
+            {name:'imageUrl',align:"center",formatter:imageFormatter},
             {name:'employeeName',align:"center"},
             {name:'teamName',align:"center"},
             {name:'positionName',align:"center"},
+            {name:'email',align:"center"},
         ],
         width:700,
         //그리드타이틀
         caption: "사원목록"
     });
 }
+function imageFormatter(cellvalue, options, rowObject)
+{
+    return '<img src="' +getContextPath()+ rowObject.imageUrl + '" />';
+}
 
+function getContextPath() {
+	   return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+}
 function loadEmployeeData() {
-	
-	
-  
 	
 	var gridData;
 	//그리드의 데이터를 비우고
