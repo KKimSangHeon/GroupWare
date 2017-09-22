@@ -36,7 +36,7 @@ EMPLOYEE(
 		LAST_LOGIN) 
 VALUES (
 		'2016122910',
-		'DEV02',	
+		'DEV03',	
 		'tkdgjs1501@nate.com',
 		'김상헌',
 		SYSDATE,
@@ -69,7 +69,7 @@ VALUES (
 		'1',
 		'1',
 		'Y',
-		'ADMIN',
+		'USER',
 		SYSDATE
 		)
 

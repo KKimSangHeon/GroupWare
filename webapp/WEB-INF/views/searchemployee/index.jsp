@@ -40,7 +40,7 @@
 					<tr >
 						<th scope="row" >팀명</th>
 						<td colspan="2">
-							<input type="text" size=30 id="teamId" name="teamId" >
+							<select id="teamId" name="teamId" style="width:178.4px; HEIGHT:17.6px"></select>
 						</td>
 						<th scope="row" >이름</th>
 						<td colspan="2">

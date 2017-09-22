@@ -65,6 +65,9 @@ function loadEmployeeData() {
 		changeActiveGnb(3);
 		initGrid();
 		
+		
+		$('#teamId').append("<option value=''>전체</option>");
+		makeTeamList('teamId');
 		loadEmployeeData();
 		
 		$("#searchEmployeeButton").click(function(){  
