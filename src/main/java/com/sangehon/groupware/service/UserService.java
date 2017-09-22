@@ -1,5 +1,7 @@
 package com.sangehon.groupware.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,4 +29,15 @@ public class UserService {
 	public int updateLoginTime(String no) {
 		return userDao.updateLoginTime(no);
 	}
+	
+	public List<UserVo> getTeamList(){
+		return userDao.getTeamList();
+		
+	}	
+	public List<UserVo> getPositionList(){
+		return userDao.getPositionList();
+		
+	}
+	
+	
 }

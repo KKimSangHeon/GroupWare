@@ -3,6 +3,18 @@
 
 <mapper namespace="user">
 
+	<select id="getTeamList"  resultType="uservo">
+		SELECT TEAM_ID TEAMID,TEAM_NAME TEAMNAME
+		FROM TEAM
+	
+	</select>
+
+	<select id="getPositionList"  resultType="uservo">
+	SELECT POSITION_ID POSITIONID,POSITION_NAME POSITIONNAME
+		FROM POSITION
+		ORDER BY TO_NUMBER(POSITION_ID) DESC
+		
+		</select>
 
 	<insert id="insert" parameterType="uservo">
 		<![CDATA[
@@ -21,11 +33,11 @@
 				IMAGE_URL) 
 		VALUES (
 				#{employeeNo},
-				'DEV04',	
+				#{teamId},	
 				#{email},
 				#{employeeName},
 				SYSDATE,
-				'TEMP',
+				#{positionId},
 				#{password},
 				'N',
 				'USER',

@@ -5,6 +5,11 @@
 <html>
 <head>
 <title>Join form</title>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="${pageContext.servletContext.contextPath }/assets/js/common.js" type="text/javascript"></script>
+<script src="${pageContext.servletContext.contextPath }/assets/js/join.js" type="text/javascript"></script>
+
 <link
 	href="${pageContext.servletContext.contextPath }/assets/css/join.css"
 	rel="stylesheet" type="text/css">
@@ -27,12 +32,11 @@
 				
 			</div>
 			<div id="form2">
-
 				<p>
 					<input type="text" name="employeeNo"> 
 				</p>
 				<p>
-					<input type="password" name="password" /> (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)
+					<input type="password" name="password" /> 
 				</p>
 				<p>
 					<input type="file" name="file">
@@ -41,17 +45,17 @@
 					<input type="text" name="employeeName" />
 				</p>
 				<p>
-					<input type="text" name="teamName" />
+					<select id="teamId" name="teamId" style="width:160.8px; HEIGHT:22PX"></select>
 				</p>
 				<p>
 					<input type="text" name="email" />
 				</p>
 				<p>
-					<input type="text" name="position" />
+					<select id="positionId" name="positionId" style="width:160.8px; HEIGHT:22PX" ></select>
 				</p>
 			</div>
 
-			<button id="submit" style="WIDTH: 80pt; HEIGHT: 20pt">가입요청하기</button>
+			<button id="submit" style="width:160.8px; HEIGHT:22PX">가입요청하기</button>
 		</form>
 	</div>
 

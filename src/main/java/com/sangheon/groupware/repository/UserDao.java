@@ -1,6 +1,7 @@
 package com.sangheon.groupware.repository;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -37,6 +38,14 @@ public class UserDao {
 	
 	public int updateLoginTime( String employeeNo) {
 		return sqlSession.update("user.updateLoginTime", employeeNo );
+		
+	}
+	public List<UserVo> getTeamList(){
+		return sqlSession.selectList("user.getTeamList");
+		
+	}
+	public List<UserVo> getPositionList(){
+		return sqlSession.selectList("user.getPositionList");
 		
 	}
 }

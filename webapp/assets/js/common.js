@@ -1,3 +1,46 @@
+function makeTeamList(selectTagId){
+	
+	$.ajax({
+		url: "/groupware/api/user/getTeamList",
+		type: "get",
+		dataType: "json",
+		data:"",
+		success: function( response ) {
+			if( response.result != "success" ) {
+				console.log( response.message );
+				return;
+			}
+			
+			$.each( response.data, function(index, vo){
+				$('#'+selectTagId).append("<option value="+vo.teamId+">"+vo.teamName+"</option>");
+			});
+		}
+	});
+	
+}
+
+
+function makePositionList(selectTagId){
+	
+	$.ajax({
+		url: "/groupware/api/user/getPositionList",
+		type: "get",
+		dataType: "json",
+		data:"",
+		success: function( response ) {
+			if( response.result != "success" ) {
+				console.log( response.message );
+				return;
+			}
+			
+			$.each( response.data, function(index, vo){
+				$('#'+selectTagId).append("<option value="+vo.positionId+">"+vo.positionName+"</option>");
+			});
+		}
+	});
+	
+}
+
 
 
 function changeActiveGnb(itemNum){
