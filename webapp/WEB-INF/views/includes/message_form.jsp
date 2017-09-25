@@ -7,7 +7,7 @@
 
 
 
-<h2>ㅇㅇ게시판</h2>
+<h2>쪽지 리스트</h2>
 
 <table class="board_list">
 	<colgroup>
@@ -18,9 +18,9 @@
 	</colgroup>
 	<thead>
 		<tr>
-			<th scope="col">글번호</th>
+			<th scope="col">발신자</th>
 			<th scope="col">제목</th>
-			<th scope="col">송신시간</th>
+			<th scope="col">수신시간</th>
 			<th scope="col">답장</th>
 			<th scope="col">삭제</th>
 
@@ -61,7 +61,7 @@
 			<!--뺄것 -->
 			<td>11</td>
 			<!--뺄것 -->
-			<td><button id="create-user">답장</button></td>
+			<td><button id="answer">답장</button></td>
 			<!--뺄것 -->
 			<td><a href="#this" name="title">삭제</a></td>
 		</tr>

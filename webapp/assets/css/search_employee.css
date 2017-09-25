@@ -1,6 +1,7 @@
 @CHARSET "UTF-8";
 @import "init.css";
 @import "header.css";
+@import "message_send_form.css";
 @import "top_gnb.css";
 @import "footer.css";
 

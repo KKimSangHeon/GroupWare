@@ -15,7 +15,6 @@ import com.sangheon.groupware.vo.BoardVo;
 import com.sangheon.groupware.vo.UserVo;
 import com.sangheon.security.Auth;
 import com.sangheon.security.AuthUser;
-
 @Auth
 @Controller
 @RequestMapping("/board")
@@ -74,6 +73,7 @@ public class BoardController {
 	public String write(@RequestParam(value = "boardId", required = true, defaultValue = "NOTICE") String boardId, 
 			@RequestParam(value = "boardName", required = true, defaultValue = "공지사항") String boardName,
 			Model model) {
+		
 		
 		model.addAttribute("boardId", boardId);	
 		model.addAttribute("boardName", boardName);	

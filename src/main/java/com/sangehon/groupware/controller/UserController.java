@@ -37,9 +37,6 @@ public class UserController {
 		userVo.setImageUrl(fileUploadService.restore(file));
 		userService.join(userVo);
 		
-		System.out.println(userVo.getTeamId()+"ttttttttttttttttttttttttttttttttt"+userVo.getPositionId());
-		
-		
 		return "redirect:/user/joinsuccess";
 	}
 	

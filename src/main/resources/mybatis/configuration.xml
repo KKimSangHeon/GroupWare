@@ -5,12 +5,14 @@
 		<typeAlias alias="uservo" type="com.sangheon.groupware.vo.UserVo"/>
 		<typeAlias alias="boardvo" type="com.sangheon.groupware.vo.BoardVo"/>
 		<typeAlias alias="contentvo" type="com.sangheon.groupware.vo.ContentVo"/>
+		<typeAlias alias="messagevo" type="com.sangheon.groupware.vo.MessageVo"/>
     </typeAliases>	
 	
 	<mappers>
 		<mapper resource="mybatis/mappers/user.xml"/>
 		<mapper resource="mybatis/mappers/board.xml"/>
 		<mapper resource="mybatis/mappers/searchemployee.xml"/>
+		<mapper resource="mybatis/mappers/message.xml"/>
 	</mappers>
 	
 </configuration>

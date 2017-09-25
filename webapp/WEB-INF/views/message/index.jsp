@@ -29,7 +29,6 @@
     var dialog, form,
  
       // From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
-      emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
       name = $( "#name" ),
       email = $( "#email" ),
       password = $( "#password" ),
@@ -45,57 +44,21 @@
       }, 500 );
     }
  
-    function checkLength( o, n, min, max ) {
-      if ( o.val().length > max || o.val().length < min ) {
-        o.addClass( "ui-state-error" );
-        updateTips( "Length of " + n + " must be between " +
-          min + " and " + max + "." );
-        return false;
-      } else {
-        return true;
-      }
+
+
+ 
+    function answerMessage() {
+		alert("전송버튼 누름");
+		 dialog.dialog( "close" );
     }
  
-    function checkRegexp( o, regexp, n ) {
-      if ( !( regexp.test( o.val() ) ) ) {
-        o.addClass( "ui-state-error" );
-        updateTips( n );
-        return false;
-      } else {
-        return true;
-      }
-    }
- 
-    function addUser() {
-      var valid = true;
-      allFields.removeClass( "ui-state-error" );
- 
-      valid = valid && checkLength( name, "username", 3, 16 );
-      valid = valid && checkLength( email, "email", 6, 80 );
-      valid = valid && checkLength( password, "password", 5, 16 );
- 
-      valid = valid && checkRegexp( name, /^[a-z]([0-9a-z_\s])+$/i, "Username may consist of a-z, 0-9, underscores, spaces and must begin with a letter." );
-      valid = valid && checkRegexp( email, emailRegex, "eg. ui@jquery.com" );
-      valid = valid && checkRegexp( password, /^([0-9a-zA-Z])+$/, "Password field only allow : a-z 0-9" );
- 
-      if ( valid ) {
-        $( "#users tbody" ).append( "<tr>" +
-          "<td>" + name.val() + "</td>" +
-          "<td>" + email.val() + "</td>" +
-          "<td>" + password.val() + "</td>" +
-        "</tr>" );
-        dialog.dialog( "close" );
-      }
-      return valid;
-    }
- 
-    dialog = $( "#dialog-form" ).dialog({
+    dialog = $( "#answerForm" ).dialog({
       autoOpen: false,
       height: 400,
       width: 350,
       modal: true,
       buttons: {
-        "전송하기": addUser,
+        "전송하기": answerMessage,
         Cancel: function() {
           dialog.dialog( "close" );
         }
@@ -108,12 +71,9 @@
  
     form = dialog.find( "form" ).on( "submit", function( event ) {
       event.preventDefault();
-      addUser();
+      answerMessage();
     });
  
-    $( "#create-user" ).button().on( "click", function() {
-      dialog.dialog( "open" );
-    });
   } );
   </script>
   <script src="${pageContext.servletContext.contextPath }/assets/js/common.js" type="text/javascript"></script>
@@ -125,7 +85,8 @@
 <c:import url="/WEB-INF/views/includes/top_gnb.jsp"/>
 
 
-<div id="dialog-form" title="Create new user">
+
+<div id="answerForm" title="메세지 전송">
   <form>
     <fieldset>
       <label for="name">전송할 내용을 입력하세요</label>

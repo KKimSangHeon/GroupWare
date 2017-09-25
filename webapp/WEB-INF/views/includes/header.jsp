@@ -16,6 +16,8 @@
 			
 			</c:when>
 			<c:otherwise>
+			<input type="hidden" id="userEmployeeNo" value="${authUser.employeeNo}" >
+			
 				<span> ${authUser.employeeName } ${authUser.positionName }님
 					반갑습니다. <c:if test="${authUser.role == 'ADMIN' }">
 						<a href="${pageContext.servletContext.contextPath }/admin">관리페이지</a>

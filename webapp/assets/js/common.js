@@ -1,3 +1,13 @@
+
+
+
+
+
+/**
+ * 팀 리스트를 받아오는 함수
+ * 파라미터는 select 아이디.
+ */
+
 function makeTeamList(selectTagId){
 	
 	$.ajax({
@@ -20,6 +30,10 @@ function makeTeamList(selectTagId){
 }
 
 
+/**
+ * 직급 리스트를 받아오는 함수
+ * 파라미터는 select 아이디.
+ */
 function makePositionList(selectTagId){
 	
 	$.ajax({
@@ -41,7 +55,10 @@ function makePositionList(selectTagId){
 	
 }
 
-
+/**
+ * 활성중인 탭 변경하는 함수
+ *
+ */
 
 function changeActiveGnb(itemNum){
 	 
@@ -58,6 +75,11 @@ function changeActiveGnb(itemNum){
 }
 
 
+
+/**
+ * 활성중인 게시판 글자색 변경하는 함수
+ *
+ */
 function changeActiveGlobal_Aside(boardName){
 		
 	$('#boardList a').each(function(index, item) {
