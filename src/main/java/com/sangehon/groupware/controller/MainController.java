@@ -15,12 +15,6 @@ public class MainController {
 		return "main/main";
 	}
 	
-	
-	
-	
-	
-	
-
 
 	@RequestMapping( "/test")
 	public String test() {

@@ -15,4 +15,19 @@
 					SYSDATE
 					)
 	</insert>
+	
+	
+		<select id="getMessage" resultType="messagevo">
+		SELECT RECEIVER_EMPLOYEE_NO receiverEmployeeNo,
+			  		 SENDER_EMPLOYEE_NO senderEmployeeNo,
+				   (
+				   SELECT	'[' ||	(SELECT TEAM_NAME FROM TEAM WHERE TEAM_ID = EMPLOYEE.TEAM_ID) || '] ' ||	 EMPLOYEE_NAME 				    
+				    FROM EMPLOYEE 
+				    WHERE EMPLOYEE_NO = MESSAGE.SENDER_EMPLOYEE_NO) SENDER,
+			   		MESSAGE_CONTENT message,
+			   		WRITE_DATE WRITEDATE
+		FROM MESSAGE
+		WHERE RECEIVER_EMPLOYEE_NO = #{employeeNo}
+		
+	</select>
 </mapper>

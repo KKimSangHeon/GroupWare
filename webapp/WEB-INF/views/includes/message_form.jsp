@@ -19,7 +19,7 @@
 	<thead>
 		<tr>
 			<th scope="col">발신자</th>
-			<th scope="col">제목</th>
+			<th scope="col">내용</th>
 			<th scope="col">수신시간</th>
 			<th scope="col">답장</th>
 			<th scope="col">삭제</th>
@@ -27,46 +27,27 @@
 		</tr>
 	</thead>
 	<tbody>
-		<!-- 
-            <c:choose>
+		        <c:choose>
                 <c:when test="${fn:length(list) > 0}">
                     <c:forEach items="${list }" var="row">
                         <tr>
-                            <td>${row.IDX }</td>
+                            <td>${row.sender }</td>
                             <td class="title">
-                                <a href="#this" name="title">${row.TITLE }</a>
-                                <input type="hidden" id="IDX" value="${row.IDX }">
+                                <a href="${pageContext.request.contextPath }/message/temp">${row.message }</a>
+                                <input type="hidden" id="IDX" value="temp">
                             </td>
-                            <td>${row.HIT_CNT }</td>
-                            <td>${row.CREA_DTM }</td>
+                            <td>${row.writeDate }</td>
+                			<td><button id="answer">답장</button></td>
+							<td><a href="#this">삭제</a></td>
                         </tr>
                     </c:forEach>
                 </c:when>
                 <c:otherwise>
                     <tr>
-                        <td colspan="4">조회된 결과가 없습니다.</td>
+                        <td colspan="5">수신한 쪽지가 존재하지 않습니다.</td>
                     </tr>
                 </c:otherwise>
             </c:choose>
-         -->
-		<tr>
-			<!--뺄것 -->
-			<td>1</td>
-			<!--뺄것 -->
-			<td class="title">
-				<!--뺄것 --> <a href="#this" name="title">ddddddddddddddddddddddddddddddd</a>
-			<!--뺄것 --> <input type="hidden" id="IDX" value="ㅎㅇ">
-			<!--뺄것 -->
-			</td>
-			<!--뺄것 -->
-			<td>11</td>
-			<!--뺄것 -->
-			<td><button id="answer">답장</button></td>
-			<!--뺄것 -->
-			<td><a href="#this" name="title">삭제</a></td>
-		</tr>
-		<!--뺄것 -->
 	</tbody>
 </table>
 <br />
-<a href="#this" class="btn" id="write">글쓰기</a>
