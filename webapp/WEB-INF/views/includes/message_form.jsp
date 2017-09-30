@@ -30,6 +30,7 @@
 		        <c:choose>
                 <c:when test="${fn:length(list) > 0}">
                     <c:forEach items="${list }" var="row">
+                       
                         <tr>
                             <td>${row.sender }</td>
                             <td class="title">
@@ -37,9 +38,10 @@
                                 <input type="hidden" id="IDX" value="temp">
                             </td>
                             <td>${row.writeDate }</td>
-                			<td><button id="answer">답장</button></td>
-							<td><a href="#this">삭제</a></td>
+                			<td><button id="sendMessageButton" onclick="openForm('${row.messageId}')">답장</button></td>
+							<td><button id="deleteMessageButton" onclick="deleteMessage('${row.messageId}')">삭제</button></td>
                         </tr>
+                       
                     </c:forEach>
                 </c:when>
                 <c:otherwise>

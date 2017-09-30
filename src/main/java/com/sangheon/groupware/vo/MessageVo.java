@@ -9,10 +9,15 @@ public class MessageVo extends UserVo{
 	private String messageContent;
 	private String writeDate;
 	private String sender;
+	private String messageId;
 	
 	
-	
-	
+	public String getMessageId() {
+		return messageId;
+	}
+	public void setMessageId(String messageId) {
+		this.messageId = messageId;
+	}
 	public String getSender() {
 		return sender;
 	}

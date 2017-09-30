@@ -24,58 +24,6 @@
   </style>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    var dialog, form,
- 
-      // From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
-      name = $( "#name" ),
-      email = $( "#email" ),
-      password = $( "#password" ),
-      allFields = $( [] ).add( name ).add( email ).add( password ),
-      tips = $( ".validateTips" );
- 
-    function updateTips( t ) {
-      tips
-        .text( t )
-        .addClass( "ui-state-highlight" );
-      setTimeout(function() {
-        tips.removeClass( "ui-state-highlight", 1500 );
-      }, 500 );
-    }
- 
-
-
- 
-    function answerMessage() {
-		alert("전송버튼 누름");
-		 dialog.dialog( "close" );
-    }
- 
-    dialog = $( "#answerForm" ).dialog({
-      autoOpen: false,
-      height: 400,
-      width: 350,
-      modal: true,
-      buttons: {
-        "전송하기": answerMessage,
-        Cancel: function() {
-          dialog.dialog( "close" );
-        }
-      },
-      close: function() {
-        form[ 0 ].reset();
-        allFields.removeClass( "ui-state-error" );
-      }
-    });
- 
-    form = dialog.find( "form" ).on( "submit", function( event ) {
-      event.preventDefault();
-      answerMessage();
-    });
- 
-  } );
-  </script>
   <script src="${pageContext.servletContext.contextPath }/assets/js/common.js" type="text/javascript"></script>
 <script src="${pageContext.servletContext.contextPath }/assets/js/message.js" type="text/javascript"></script>
 </head>
@@ -86,12 +34,13 @@
 
 
 
-<div id="answerForm" title="메세지 전송">
+
+<div id="sendForm" title="메세지 전송">
   <form>
     <fieldset>
       <label for="name">전송할 내용을 입력하세요</label>
-      <input type="text" style="height:50px;"  name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
- 	  <textarea rows="10" cols="48" name="contents"></textarea>
+      <input type="hidden" name="selectedEmail" id="selectedEmail">
+ 	  <textarea id = "messageArea" rows="15" cols="48" name="contents"></textarea>
       <!-- Allow form submission with keyboard without duplicating the dialog button -->
       <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
     </fieldset>

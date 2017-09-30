@@ -22,6 +22,12 @@ public class MessageService {
 		return result;
 	}
 	
+	public int deleteMessage(MessageVo messageVo) {
+		int result = messageDao.deleteMessage(messageVo);
+		return result;
+	}
+	
+	
 	public List<MessageVo> getMessage(MessageVo messageVo) {
 		List<MessageVo> list = messageDao.getMessage(messageVo);
 		return list;

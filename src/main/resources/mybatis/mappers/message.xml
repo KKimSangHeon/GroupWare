@@ -4,11 +4,13 @@
 <mapper namespace="message">
 	<insert id="sendMessage" parameterType="messagevo">
 			INSERT INTO MESSAGE(
+					MESSAGE_ID,
 					RECEIVER_EMPLOYEE_NO,
 					SENDER_EMPLOYEE_NO,
 					MESSAGE_CONTENT,
 					WRITE_DATE
 			) VALUES(
+					#{senderemployeeNo}||#{senderemployeeNo}||TO_CHAR(SYSDATE,'yyyymmddhh24miss'),
 					(SELECT EMPLOYEE_NO FROM EMPLOYEE WHERE EMAIL=#{receiverEmail}),
 					#{senderemployeeNo},
 					#{message},
@@ -20,6 +22,7 @@
 		<select id="getMessage" resultType="messagevo">
 		SELECT RECEIVER_EMPLOYEE_NO receiverEmployeeNo,
 			  		 SENDER_EMPLOYEE_NO senderEmployeeNo,
+			  		 MESSAGE_ID MESSAGEID,
 				   (
 				   SELECT	'[' ||	(SELECT TEAM_NAME FROM TEAM WHERE TEAM_ID = EMPLOYEE.TEAM_ID) || '] ' ||	 EMPLOYEE_NAME 				    
 				    FROM EMPLOYEE 
@@ -30,4 +33,12 @@
 		WHERE RECEIVER_EMPLOYEE_NO = #{employeeNo}
 		
 	</select>
+	
+	
+	<delete id="deleteMessage" parameterType="messagevo">
+		<![CDATA[
+		DELETE FROM MESSAGE WHERE MESSAGE_ID = #{messageId}
+		]]>	
+	</delete>
+	
 </mapper>

@@ -41,6 +41,16 @@ public class MessageController {
 	}
 	
 	
+	@RequestMapping( value="/deleteMessage", method=RequestMethod.POST)
+	public String deleteMessage(@ModelAttribute MessageVo messageVo) {
+		
+		
+		
+		int count = messageService.deleteMessage(messageVo);
+		return "message/index";
+	}
+	
+	
 	@ResponseBody
 	@RequestMapping( value="/sendMessage", method=RequestMethod.POST )
 	public JSONResult sendMessage(@ModelAttribute MessageVo messageVo) {

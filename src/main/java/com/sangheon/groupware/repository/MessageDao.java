@@ -18,7 +18,11 @@ public class MessageDao {
 	
 	public int sendMessage(MessageVo messageVo ) {
 		int count = sqlSession.insert("message.sendMessage", messageVo);
-		System.out.println(messageVo.getMessage()+messageVo.getSenderemployeeNo()+messageVo.getReceiverEmail());
+		return count;
+	}
+	
+	public int deleteMessage(MessageVo messageVo ) {
+		int count = sqlSession.delete("message.deleteMessage", messageVo);
 		return count;
 	}
 	
