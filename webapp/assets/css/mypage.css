@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+@import "header.css";
+@import "top_gnb.css";
+@import "modify_form.css";
+@import "footer.css";
+
+
+        .login_menu {
+            font: normal 12px 'Dotum';
+        }
+        a { text-decoration: none; }
+        img { border: 0; }
+        ul { list-style: none; }
+
+        body {
+            width: 700px;
+            margin: 0 auto;
+        }
+        a:link, a:visited {text-decoration: none; color: #656565;}

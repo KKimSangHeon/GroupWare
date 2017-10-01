@@ -1,0 +1,112 @@
+@CHARSET "UTF-8";
+
+       p {
+            font-size: 11px;
+        }
+
+        body {
+         font-size: 11px;
+         background-color: #fffff;
+        }
+
+        .form-wrap {
+            width: 50%;
+            margin: 0 auto;
+            overflow: hidden;
+            border: #f1eded solid 1px;
+            padding: 20px;
+               background-color:#F1F1F1;
+                    border-radius: 15px;
+        }
+
+        #register {
+            padding: 50px;
+            color: #808080;
+            text-align: center;
+        }
+
+        #menu1 {
+            float: left;
+            height: 160px;
+            width: 20%;
+        }
+
+        #form1 {
+            float: left;
+            height: 60%;
+            width: 79%;
+        }
+
+        #describe_iPin {
+            clear: both;
+        }
+
+        .firstmenu {
+            height: 150px;
+            border-bottom: #d8d1d1 solid 1px;
+            padding-bottom: 20px;
+        }
+
+        .secondmenu {
+            overflow: hidden;
+            padding-bottom: 20px;
+            border-bottom: #d8d1d1 solid 1px;
+        }
+
+        #menu2 {
+            width: 20%;
+            float: left;
+            line-height: 230%;
+        }
+
+        #form2 {
+            width: 79%;
+            float: left;
+            line-height: 230%;
+        }
+
+        #menu3 {
+            width: 20%;
+            float: left;
+            line-height: 230%;
+        }
+
+        #form3 {
+            width: 79%;
+            float: left;
+            line-height: 230%;
+        }
+
+        #menu4 {
+            float: left;
+            width: 20%;
+        }
+
+        #form4 {
+            float: left;
+            width: 79%;
+        }
+
+        #join {
+            font-size: 20px;
+            height: 30px;
+            padding: 0;
+        }
+
+        #additionalinfo {
+            font-size: 15px;
+            height: 30px;
+            padding: 0;
+        }
+        .essential{
+            font-size:15px;
+            color:red;
+            float:left;
+        }
+        div.input{
+            float:left;
+        }
+        
+        #submit{
+        	margin-top:30px;
+        }
