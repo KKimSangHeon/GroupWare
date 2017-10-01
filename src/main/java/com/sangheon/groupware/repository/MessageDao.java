@@ -20,6 +20,10 @@ public class MessageDao {
 		int count = sqlSession.insert("message.sendMessage", messageVo);
 		return count;
 	}
+	public int answerMessage(MessageVo messageVo ) {
+		int count = sqlSession.insert("message.answerMessage", messageVo);
+		return count;
+	}
 	
 	public int deleteMessage(MessageVo messageVo ) {
 		int count = sqlSession.delete("message.deleteMessage", messageVo);

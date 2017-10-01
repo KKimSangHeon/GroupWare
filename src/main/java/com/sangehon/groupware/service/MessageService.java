@@ -22,6 +22,12 @@ public class MessageService {
 		return result;
 	}
 	
+	public int answerMessage(MessageVo messageVo) {
+		int result = messageDao.answerMessage(messageVo);
+		
+		return result;
+	}
+	
 	public int deleteMessage(MessageVo messageVo) {
 		int result = messageDao.deleteMessage(messageVo);
 		return result;

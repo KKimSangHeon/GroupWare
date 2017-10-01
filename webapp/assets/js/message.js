@@ -20,13 +20,13 @@ function initSendMessageForm(){
 			var data = new Object();
 			
 			data.messageId= messageId;
+			data.message = $("#messageArea").val();
 			
-			alert(data.messageId+"  ");
 			JSON.stringify(data);
 			
-	/*		$.ajax({
+			$.ajax({
 				
-				 url:'/groupware/message/sendMessage',
+				 url:'/groupware/message/answerMessage',
 				type:'POST',
 				data:data,
 		        contentType: 'application/x-www-form-urlencoded; charset=UTF-8', 
@@ -36,8 +36,10 @@ function initSendMessageForm(){
 				},
 				complete: function() {			
 					dialog.dialog( "close" );
+					alert("메세지 전송을 완료하였습니다.");
+					window.location.reload();
 				}
-			});*/
+			});
 			
 			
 			
@@ -73,7 +75,6 @@ function initSendMessageForm(){
 }
 
 function openForm(answerMessageId){
-	alert(answerMessageId);
 	messageId=answerMessageId;
 	dialog.dialog( "open" );
 }
@@ -81,7 +82,6 @@ function openForm(answerMessageId){
 function deleteMessage(messageId){
 	var data = new Object();
 	data.messageId=messageId;
-	alert("삭제누름"+messageId);
 	JSON.stringify(data);
 	
 	$.ajax({

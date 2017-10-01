@@ -59,4 +59,13 @@ public class MessageController {
 		
 		return JSONResult.success(count);
 	}
+	
+	@ResponseBody
+	@RequestMapping( value="/answerMessage", method=RequestMethod.POST )
+	public JSONResult answerMessage(@ModelAttribute MessageVo messageVo) {
+		
+		int count = messageService.answerMessage(messageVo);
+		
+		return JSONResult.success(count);
+	}
 }
