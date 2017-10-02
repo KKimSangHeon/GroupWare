@@ -6,7 +6,7 @@
 
 <header id="main_header">
 	<h1 class="logo">
-		<a href="#"><img src="/groupware/assets/images/title.png" /></a>
+		<a href="${pageContext.request.contextPath }/board" ><img id="title_image" src="/groupware/assets/images/title.png" /></a>
 	</h1>
 
 
