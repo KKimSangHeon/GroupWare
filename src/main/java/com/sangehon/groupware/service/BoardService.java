@@ -1,6 +1,5 @@
 package com.sangehon.groupware.service;
 
-import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +14,12 @@ public class BoardService {
 	@Autowired
 	private BoardDao boardDao;
 
+	
+	public BoardVo getContent(BoardVo boardVo) {
+		return boardDao.getContent(boardVo);
+		
+	}
+	
 	public List<BoardVo> getBoardList() {
 		List<BoardVo> list = boardDao.getBoardList();
 		return list;

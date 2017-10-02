@@ -4,49 +4,67 @@
 <mapper namespace="message">
 	<insert id="answerMessage" parameterType="messagevo">
 		INSERT INTO MESSAGE
-		SELECT SENDER_EMPLOYEE_NO,RECEIVER_EMPLOYEE_NO,#{message},SYSDATE ,SENDER_EMPLOYEE_NO||RECEIVER_EMPLOYEE_NO||TO_CHAR(SYSDATE,'yyyymmddhh24miss')
-		FROM MESSAGE 
+		SELECT SENDER_EMPLOYEE_NO,RECEIVER_EMPLOYEE_NO,#{message},SYSDATE
+		,SENDER_EMPLOYEE_NO||RECEIVER_EMPLOYEE_NO||TO_CHAR(SYSDATE,'yyyymmddhh24miss')
+		FROM MESSAGE
 		WHERE MESSAGE_ID = #{messageId}
 	</insert>
 
 	<insert id="sendMessage" parameterType="messagevo">
-			INSERT INTO MESSAGE(
-					MESSAGE_ID,
-					RECEIVER_EMPLOYEE_NO,
-					SENDER_EMPLOYEE_NO,
-					MESSAGE_CONTENT,
-					WRITE_DATE
-			) VALUES(
-					#{senderemployeeNo}||#{senderemployeeNo}||TO_CHAR(SYSDATE,'yyyymmddhh24miss'),
-					(SELECT EMPLOYEE_NO FROM EMPLOYEE WHERE EMAIL=#{receiverEmail}),
-					#{senderemployeeNo},
-					#{message},
-					SYSDATE
-					)
+		INSERT INTO MESSAGE(
+		MESSAGE_ID,
+		RECEIVER_EMPLOYEE_NO,
+		SENDER_EMPLOYEE_NO,
+		MESSAGE_CONTENT,
+		WRITE_DATE
+		) VALUES(
+		#{senderemployeeNo}||#{senderemployeeNo}||TO_CHAR(SYSDATE,'yyyymmddhh24miss'),
+		(SELECT EMPLOYEE_NO FROM EMPLOYEE WHERE EMAIL=#{receiverEmail}),
+		#{senderemployeeNo},
+		#{message},
+		SYSDATE
+		)
 	</insert>
-	
-	
-		<select id="getMessage" resultType="messagevo">
-		SELECT RECEIVER_EMPLOYEE_NO receiverEmployeeNo,
-			  		 SENDER_EMPLOYEE_NO senderEmployeeNo,
-			  		 MESSAGE_ID MESSAGEID,
-				   (
-				   SELECT	'[' ||	(SELECT TEAM_NAME FROM TEAM WHERE TEAM_ID = EMPLOYEE.TEAM_ID) || '] ' ||	 EMPLOYEE_NAME 				    
-				    FROM EMPLOYEE 
-				    WHERE EMPLOYEE_NO = MESSAGE.SENDER_EMPLOYEE_NO) SENDER,
-			   		MESSAGE_CONTENT message,
-			   		WRITE_DATE WRITEDATE
+
+
+
+	<select id="getDetailMessage" resultType="messagevo">
+		SELECT MESSAGE_CONTENT MESSAGE,
+			(SELECT '[' || (SELECT TEAM_NAME FROM TEAM WHERE TEAM_ID = EMPLOYEE.TEAM_ID)
+			|| '] ' || EMPLOYEE_NAME
+			FROM EMPLOYEE
+			WHERE EMPLOYEE_NO = MESSAGE.SENDER_EMPLOYEE_NO) SENDER
+		FROM MESSAGE
+		WHERE MESSAGE_ID = #{messageId}
+
+
+	</select>
+
+
+	<select id="getMessage" resultType="messagevo">
+		SELECT RECEIVER_EMPLOYEE_NO
+		receiverEmployeeNo,
+		SENDER_EMPLOYEE_NO senderEmployeeNo,
+		MESSAGE_ID MESSAGEID,
+		(
+		SELECT '[' || (SELECT TEAM_NAME FROM TEAM WHERE TEAM_ID = EMPLOYEE.TEAM_ID)
+		|| '] ' || EMPLOYEE_NAME
+		FROM EMPLOYEE
+		WHERE EMPLOYEE_NO = MESSAGE.SENDER_EMPLOYEE_NO) SENDER,
+		MESSAGE_CONTENT message,
+		WRITE_DATE WRITEDATE
 		FROM MESSAGE
 		WHERE RECEIVER_EMPLOYEE_NO = #{employeeNo}
-		ORDER BY WRITEDATE DESC
-		
+		ORDER
+		BY WRITEDATE DESC
+
 	</select>
-	
-	
+
+
 	<delete id="deleteMessage" parameterType="messagevo">
 		<![CDATA[
 		DELETE FROM MESSAGE WHERE MESSAGE_ID = #{messageId}
-		]]>	
+		]]>
 	</delete>
-	
+
 </mapper>

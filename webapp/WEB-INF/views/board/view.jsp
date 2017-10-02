@@ -31,15 +31,14 @@
 					<col width="15%">
 					<col width="*" />
 				</colgroup>
-				<caption id="title">${boardName} 게시글작성</caption>
 				<tbody>
-					<tr>
+					<tr >
 						<th scope="row" >제목</th>
-						<td><input  type="text" id="contentTitle" name="contentTitle" class="wdp_90"></input></td>
+						<td><input id="contentTitle" class="wdp_90" value="${contentTitle}"  readonly style="border:0px;"></input></td>
 					</tr>
 					<tr>
 						<td colspan="2" class="view_text"><textarea rows="20"
-								cols="110" title="내용" id="contentContent" name="contentContent"></textarea></td>
+								cols="110" title="내용" id="contentContent" name="contentContent" readonly>${content}</textarea></td>
 					</tr>
 
 				</tbody>
@@ -49,8 +48,7 @@
 			<input type="hidden" id="teamId" name="teamId" value=${authUser.teamId }>
 			<input type="hidden" id="boardId" name="boardId" value=${boardId }>
 			<div class="right">
-					<button id="submit">작성하기</button> 
-					<button type="button"  onclick = "location.href = '${pageContext.servletContext.contextPath }/board?boardId=${boardId }' ">돌아가기</button>
+					<button type="button"  onClick="history.back();">돌아가기</button>
 			</div>
 				<span>
 				</span>

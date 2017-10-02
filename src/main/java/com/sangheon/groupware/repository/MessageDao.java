@@ -16,6 +16,12 @@ public class MessageDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
+	
+	public MessageVo getDetailMessage(MessageVo messageVo ) {
+		return sqlSession.selectOne("message.getDetailMessage", messageVo);
+		
+	}
+	
 	public int sendMessage(MessageVo messageVo ) {
 		int count = sqlSession.insert("message.sendMessage", messageVo);
 		return count;

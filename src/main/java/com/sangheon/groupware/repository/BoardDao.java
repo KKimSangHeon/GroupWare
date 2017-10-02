@@ -17,6 +17,12 @@ public class BoardDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
+	
+	public BoardVo getContent(BoardVo boardVo) {
+		return sqlSession.selectOne("board.getContent" ,boardVo);
+		
+	}
+	
 	public List<BoardVo> getBoardList( ) {
 		
 		return sqlSession.selectList( "board.getBoardList" );

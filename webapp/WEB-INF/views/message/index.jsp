@@ -36,11 +36,6 @@
     </fieldset>
   </form>
 </div>
- 
- 
-
-
-
 
 <c:import url="/WEB-INF/views/includes/message_form.jsp"/>
 <c:import url="/WEB-INF/views/includes/footer.jsp"/>

@@ -7,10 +7,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sangehon.groupware.service.MessageService;
 import com.sangheon.groupware.dto.JSONResult;
+import com.sangheon.groupware.vo.BoardVo;
 import com.sangheon.groupware.vo.MessageVo;
 import com.sangheon.groupware.vo.UserVo;
 import com.sangheon.security.Auth;
@@ -27,8 +29,6 @@ public class MessageController {
 	@RequestMapping( "")
 	public String message(@AuthUser UserVo authUser, 
 											Model model) {
-		
-		
 		MessageVo messageVo= new MessageVo();
 		messageVo.setEmployeeNo(authUser.getEmployeeNo());
 		List<MessageVo> list = 
@@ -38,6 +38,21 @@ public class MessageController {
 		
 		
 		return "message/index";
+	}
+	
+	@RequestMapping(value="/view", method=RequestMethod.GET)
+	public String view(@RequestParam(value = "messageId", required = true) String messageId,
+			Model model) {
+		
+		MessageVo messageVo = new MessageVo();
+		messageVo.setMessageId(messageId);
+		MessageVo resVo = messageService.getDetailMessage(messageVo);
+		
+		
+		
+		model.addAttribute("sender", resVo.getSender());
+		model.addAttribute("message", resVo.getMessage());
+		return "message/view";
 	}
 	
 	

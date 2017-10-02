@@ -4,6 +4,14 @@
 <mapper namespace="board">
 
 
+	<select id="getContent" resultType="boardvo">
+		SELECT CONTENT_TITLE CONTENTTITLE,CONTENT_CONTENT CONTENTCONTENT
+		FROM CONTENT
+		WHERE CONTENT_ID = #{contentId}
+	
+	
+	</select>
+
 	<select id="getBoardList" resultType="boardvo">
 		SELECT BOARD_NAME BOARDNAME,
 			BOARD_ID BOARDID,

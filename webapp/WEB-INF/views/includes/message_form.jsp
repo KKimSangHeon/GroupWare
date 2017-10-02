@@ -34,7 +34,18 @@
                         <tr>
                             <td>${row.sender }</td>
                             <td class="title">
-                                <a href="${pageContext.request.contextPath }/message/temp">${row.message }</a>
+                                <a href="${pageContext.request.contextPath }/message/view?messageId=${row.messageId}">
+                                
+							          <c:choose>
+							           <c:when test="${fn:length(row.message) > 23}">
+							            <c:out value="${fn:substring(row.message,0,23)}"/>....
+							           </c:when>
+							           <c:otherwise>
+							            <c:out value="${row.message}"/>
+							           </c:otherwise> 
+							          </c:choose>
+								
+                                </a>
                                 <input type="hidden" id="IDX" value="temp">
                             </td>
                             <td>${row.writeDate }</td>

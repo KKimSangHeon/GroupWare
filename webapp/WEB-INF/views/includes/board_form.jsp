@@ -31,7 +31,7 @@
                         <tr>
                             <td>${row.no }</td>
                             <td class="title">
-                                <a href="${pageContext.request.contextPath }/board/view?cotnetId=${row.contentId }">${row.contentTitle }</a>
+                                <a href="${pageContext.request.contextPath }/board/view?contentId=${row.contentId }">${row.contentTitle }</a>
                                 <input type="hidden" id="IDX" value="${row.no }">
                             </td>
                             <td>${row.employeeName }</td>

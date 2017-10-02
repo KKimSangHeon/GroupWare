@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.sangheon.groupware.repository.MessageDao;
 import com.sangheon.groupware.vo.MessageVo;
-import com.sangheon.groupware.vo.UserVo;
 
 @Service
 public class MessageService {
@@ -15,7 +14,10 @@ public class MessageService {
 	@Autowired
 	private MessageDao messageDao;
 	
-	
+	public MessageVo getDetailMessage(MessageVo messageVo) {
+		return messageDao.getDetailMessage(messageVo);
+		
+	}
 	public int sendMessage(MessageVo messageVo) {
 		int result = messageDao.sendMessage(messageVo);
 		

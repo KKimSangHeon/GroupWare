@@ -80,6 +80,22 @@ public class BoardController {
 		
 		return "board/write";
 	}
+	
+	@RequestMapping(value="/view", method=RequestMethod.GET)
+	public String view(@RequestParam(value = "contentId", required = true) String contentId,
+			Model model) {
+		
+		BoardVo boardVo = new BoardVo();
+		boardVo.setContentId(contentId);
+		BoardVo resVo = boardService.getContent(boardVo);
+		
+		
+		model.addAttribute("contentTitle", resVo.getContentTitle());
+		model.addAttribute("content",resVo.getContentContent());
+		
+		
+		return "board/view";
+	}
 
 	@RequestMapping( value="/write", method=RequestMethod.POST )
 	public String write( @ModelAttribute BoardVo boardVo, @ModelAttribute UserVo userVo) {
