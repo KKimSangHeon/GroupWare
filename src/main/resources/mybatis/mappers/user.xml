@@ -62,7 +62,8 @@
 			PASSWORD,
 			ROLE,
 			IS_AUTHORITY ISAUTHORITY,
-			LAST_LOGIN LASTLOGIN
+			LAST_LOGIN LASTLOGIN,
+			IMAGE_URL IMAGEURL
 		  FROM EMPLOYEE 
 		 WHERE EMPLOYEE_NO=#{employeeNo }
 		   AND PASSWORD=#{password }
@@ -86,7 +87,7 @@
 		]]>
 	</select>
 	
-		<update id="updateLoginTime" parameterType="uservo">
+	<update id="updateLoginTime" parameterType="uservo">
 		<![CDATA[
 			UPDATE EMPLOYEE
 			SET LAST_LOGIN = SYSDATE

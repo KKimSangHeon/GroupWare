@@ -3,7 +3,7 @@
 
 
 	<div class="form-wrap">
-		<form  name="loginform" method="post" action="${pageContext.servletContext.contextPath }/user/modify" enctype="multipart/form-data" >
+		<form  name="loginform" method="post" action="${pageContext.servletContext.contextPath }/mypage/modify" enctype="multipart/form-data" >
 			<img src="/groupware/assets/images/title.png" />
 			<div>
 				<p id="join">정보수정</p>
@@ -20,22 +20,23 @@
 			</div>
 			<div id="form2">
 				<p>
-					<input type="text" name="employeeNo" value="${authUser.employeeNo}" disabled> 
+					<input type="text" name="employeeNo1" value="${authUser.employeeNo}" disabled> 
+					<input type="hidden" name="employeeNo" value="${authUser.employeeNo}" > 
 				</p>
 				<p>
 					<input type="password" name="password" /> 
 				</p>
 				<p>
-					<input type="file" name="file">
+					<input type="file" name="file" value="${authUser.imageUrl}">
 				</p>
 				<p>
-					<input type="text" name="employeeName" />
+					<input type="text" name="employeeName" value="${authUser.employeeName}"/>
 				</p>
 				<p>
 					<input type="text" name="teamName" value="${authUser.teamName}"  disabled>
 				</p>
 				<p>
-					<input type="text" name="email" />
+					<input type="text" name="email" value="${authUser.email}" />
 				</p>
 				<p>
 					<input type="text" name="positionName" value="${authUser.positionName}" disabled > 
