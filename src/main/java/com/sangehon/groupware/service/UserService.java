@@ -38,6 +38,12 @@ public class UserService {
 		return userDao.getPositionList();
 		
 	}
+	public List<UserVo> getNotApproved(){
+		return userDao.getNotApproved();
+		
+	}
 	
-	
+	public int approveJoin(UserVo userVo) {
+		return userDao.approveJoin(userVo);
+	}
 }

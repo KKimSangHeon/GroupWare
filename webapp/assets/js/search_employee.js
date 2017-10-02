@@ -91,9 +91,6 @@ function initSendMessageForm(){
 	      }, 500 );
 	    }
 	 
-
-
-	 
     function sendMessage() {
 			
 			
@@ -119,10 +116,6 @@ function initSendMessageForm(){
 					dialog.dialog( "close" );
 				}
 			});
-			
-			
-			
-			
 	    }
 	 
 	    dialog = $( "#sendForm" ).dialog({

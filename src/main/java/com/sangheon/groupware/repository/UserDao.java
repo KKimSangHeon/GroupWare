@@ -48,4 +48,14 @@ public class UserDao {
 		return sqlSession.selectList("user.getPositionList");
 		
 	}
+	
+	public List<UserVo> getNotApproved(){
+		return sqlSession.selectList("user.getnotapproved");
+		
+	}
+	public int approveJoin( UserVo userVo) {
+		return sqlSession.update("user.approvejoin", userVo );
+		
+	}
+	
 }

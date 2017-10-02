@@ -43,9 +43,6 @@ public class MessageController {
 	
 	@RequestMapping( value="/deleteMessage", method=RequestMethod.POST)
 	public String deleteMessage(@ModelAttribute MessageVo messageVo) {
-		
-		
-		
 		int count = messageService.deleteMessage(messageVo);
 		return "message/index";
 	}
@@ -54,9 +51,7 @@ public class MessageController {
 	@ResponseBody
 	@RequestMapping( value="/sendMessage", method=RequestMethod.POST )
 	public JSONResult sendMessage(@ModelAttribute MessageVo messageVo) {
-		
 		int count = messageService.sendMessage(messageVo);
-		
 		return JSONResult.success(count);
 	}
 	
