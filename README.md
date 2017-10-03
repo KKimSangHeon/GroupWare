@@ -3,7 +3,7 @@
 그룹웨어는 회원가입, 로그인, 게시판, 일정관리, 사원조회, 쪽지, 마이페이지 기능을 갖고있다.
 
 #### ERD
-{% asset_img ERD.PNG ERD%}
+![image](https://kkimsangheon.github.io/2017/10/04/groupware/ERD.PNG)
 그룹웨어에서 사용하는 ERD는 위과 같다.
 
 #### 보안
@@ -124,5 +124,3 @@ full callendar 라는 오픈소스를 사용하여 구현하였다.
 비밀번호를 제외한 모든 데이터는 마이페이지에 접속할 경우 입력되어 있다.
 
 
-#### 소스코드 (Github Repository)
-[github Repository](https://github.com/KKimSangHeon/groupware)
