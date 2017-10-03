@@ -11,6 +11,7 @@
 		   EMAIL
 	FROM EMPLOYEE
 	WHERE IS_AUTHORITY='Y'
+
 	  	 <if test="teamId != ''">
 	  	 <![CDATA[	
 			  	AND   TEAM_ID=#{teamId }
@@ -21,6 +22,7 @@
 			  	AND   EMPLOYEE_NAME= #{employeeName }
 			  	]]>  
 		 </if>
+		 	ORDER BY TEAM_ID ASC,POSITION_ID ASC
 	</select>
 	
 </mapper>

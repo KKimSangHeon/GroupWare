@@ -12,7 +12,7 @@
 <body>
 	<c:import url="/WEB-INF/views/includes/header.jsp"/>
 		<div id="content">
-					<h1>아직 가입승인이 되지 않았습니다..</h1>
+					<h1>아직 가입승인이 되지 않았습니다..관리자에게 연락하거나 기다려 주세요</h1>
 		</div>
 </body>
 </html>
