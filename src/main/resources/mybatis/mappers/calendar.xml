@@ -15,5 +15,18 @@
 	
 	)
 	</insert>
+	
+	<select id="getSchedule" resultType="calendarvo">
+	SELECT EMPLOYEE_NO EMPLOYEENO,
+		   START_DATE STARTDATE,
+		   END_DATE ENDDATE,
+		   SCHEDULE_CONTENT SCHEDULECONTENT
+	FROM SCHEDULE
+	WHERE EMPLOYEE_NO = #{employeeNo}
+	
+	
+	</select>
+	
+	
 
 </mapper>

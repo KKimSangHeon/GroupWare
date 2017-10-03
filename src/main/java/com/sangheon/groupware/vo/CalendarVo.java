@@ -5,8 +5,29 @@ public class CalendarVo {
 	private String startDate;
 	private String endDate;
 	private String scheduleContent;
+	private String start;
+	private String end;
+	private String title;
 	
 	
+	public String getStart() {
+		return start;
+	}
+	public void setStart(String start) {
+		this.start = start;
+	}
+	public String getEnd() {
+		return end;
+	}
+	public void setEnd(String end) {
+		this.end = end;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 	public String getEmployeeNo() {
 		return employeeNo;
 	}

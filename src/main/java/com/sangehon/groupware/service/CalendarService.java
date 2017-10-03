@@ -1,5 +1,7 @@
 package com.sangehon.groupware.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,11 @@ public class CalendarService {
 		int result = calendarDao.addSchedule(scheduleVo);
 		
 		return result;
+	}
+	
+	public List<CalendarVo> getSchedule(CalendarVo scheduleVo){
+		
+		return calendarDao.getSchedule(scheduleVo);
 	}
 	
 }

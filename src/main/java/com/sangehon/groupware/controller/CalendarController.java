@@ -1,5 +1,7 @@
 package com.sangehon.groupware.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -31,9 +33,16 @@ public class CalendarController {
 	@RequestMapping( value="/addSchedule", method=RequestMethod.POST )
 	public JSONResult addSchedule(@ModelAttribute CalendarVo scheduleVo) {
 		
-		System.out.println(scheduleVo.getEndDate()+"tttttttttttttttttttttttttt"+scheduleVo.getStartDate()+"ttttt"+scheduleVo.getScheduleContent());
 		int count = calendarService.addSchedule(scheduleVo);
 		return JSONResult.success(count);
+	}
+	
+	@ResponseBody
+	@RequestMapping( value="/getSchedule", method=RequestMethod.POST )
+	public JSONResult getSchedule(@ModelAttribute CalendarVo scheduleVo) {
+		
+		List<CalendarVo> list = calendarService.getSchedule(scheduleVo);
+		return JSONResult.success(list);
 	}
 
 }
