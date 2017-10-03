@@ -39,8 +39,10 @@ public class BoardService {
 	}
 	
 	public boolean newContent(BoardVo boardVo) {
-		
-		
 		return boardDao.newContent(boardVo ) == 1;
+	}
+	
+	public int deleteContent(BoardVo boardVo) {
+		return boardDao.deleteContent(boardVo );
 	}
 }

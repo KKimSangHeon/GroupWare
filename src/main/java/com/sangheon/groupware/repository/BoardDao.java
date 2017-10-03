@@ -53,4 +53,9 @@ public class BoardDao {
 
 		return sqlSession.selectList( "board.getContentListByTeam",boardVo );
 	}
+
+	public int deleteContent( BoardVo boardVo ) {
+		
+		return sqlSession.delete("board.deleteContent",boardVo);
+	}
 }

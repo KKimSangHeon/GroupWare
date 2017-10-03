@@ -8,6 +8,8 @@
 <head>
 <title>Sang Company</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="Cache-Control" content="no-cache"> 
+<meta http-equiv="Pragma" content="no-cache"> 
 <link href="${pageContext.servletContext.contextPath}/assets/css/board.css" rel="stylesheet" type="text/css">
 
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>

@@ -17,7 +17,7 @@
 	src="${pageContext.servletContext.contextPath }/assets/js/common.js"
 	type="text/javascript"></script>
 
-<script src="${pageContext.request.contextPath}/assets/js/write.js"
+<script src="${pageContext.request.contextPath}/assets/js/board.js"
 	type="text/javascript"></script>
 
 </head>
@@ -33,8 +33,8 @@
 				</colgroup>
 				<tbody>
 					<tr >
-						<th scope="row" >제목</th>
-						<td><input id="contentTitle" class="wdp_90" value="${contentTitle}"  readonly style="border:0px;"></input></td>
+						<th scope="row" >작성자: ${employeeName}</th>
+						<td><input id="contentTitle" value="${contentTitle}"  readonly style="border:0px;"></input></td>
 					</tr>
 					<tr>
 						<td colspan="2" class="view_text"><textarea rows="20"
@@ -46,9 +46,18 @@
 			</table>
 			<input type="hidden" id="employeeNo" name="employeeNo" value=${authUser.employeeNo }>
 			<input type="hidden" id="teamId" name="teamId" value=${authUser.teamId }>
+			<input type="hidden" id="contentId" name="contentId" value=${contentId }>
 			<input type="hidden" id="boardId" name="boardId" value=${boardId }>
 			<div class="right">
+					<c:choose>
+					    <c:when test="${authUser.employeeNo eq employeeNo }">
+				        <button type="button"  onClick="deleteContent();">삭제하기</button>
+					    </c:when>
+					</c:choose>
 					<button type="button"  onClick="history.back();">돌아가기</button>
+					
+
+
 			</div>
 				<span>
 				</span>
