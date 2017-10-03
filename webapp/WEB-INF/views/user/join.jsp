@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Join form</title>
+<title>Sang Company</title>
 
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="${pageContext.servletContext.contextPath }/assets/js/common.js" type="text/javascript"></script>

@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Chapter 8</title>
+<title>Sang Company</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
 <link

@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>Sang Company</title>
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>

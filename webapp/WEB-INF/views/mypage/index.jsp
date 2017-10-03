@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Chapter 8</title>
+<title>Sang Company</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link href="${pageContext.servletContext.contextPath}/assets/css/mypage.css" rel="stylesheet" type="text/css">

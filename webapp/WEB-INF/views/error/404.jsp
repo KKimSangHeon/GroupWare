@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Sang Company</title>
 </head>
 <body>
 	<h1>죄송합니다.(404)</h1>
