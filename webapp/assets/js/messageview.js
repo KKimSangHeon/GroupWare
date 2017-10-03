@@ -1,4 +1,4 @@
 $(function(){
 	
-	changeActiveGnb(1);
+	changeActiveGnb(4);
 })
