@@ -161,7 +161,4 @@ function initSendMessageForm(){
 			loadEmployeeData();
 		});  
 		
-
-		
-		
 })

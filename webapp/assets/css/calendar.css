@@ -6,3 +6,35 @@
 @import "footer.css";
 
 
+#newScheduleForm{   width: 700px;}
+
+
+.ui-datepicker{
+	margin-left : -412px;
+	margin-top:5px;
+	
+}
+
+#newScheduleForm{
+	
+	margin-bottom:20px;
+	border :2px solid #e9e9e9;
+	border-radius: 5px;
+}
+
+#newScheduleForm >table{
+	padding:10px;
+}
+
+#newScheduleForm >table >tbody>tr>td{
+}
+
+ #newScheduleTable{
+ 		width: 700px;
+ }
+ 
+ #newSchedulrTitle{
+ 	padding-bottom: 15px;
+ }
+ #addScheduleButton{
+ }

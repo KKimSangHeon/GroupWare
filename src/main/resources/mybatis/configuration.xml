@@ -6,6 +6,7 @@
 		<typeAlias alias="boardvo" type="com.sangheon.groupware.vo.BoardVo"/>
 		<typeAlias alias="contentvo" type="com.sangheon.groupware.vo.ContentVo"/>
 		<typeAlias alias="messagevo" type="com.sangheon.groupware.vo.MessageVo"/>
+		<typeAlias alias="calendarvo" type="com.sangheon.groupware.vo.CalendarVo"/>
     </typeAliases>	
 	
 	<mappers>
@@ -14,6 +15,7 @@
 		<mapper resource="mybatis/mappers/searchemployee.xml"/>
 		<mapper resource="mybatis/mappers/message.xml"/>
 		<mapper resource="mybatis/mappers/mypage.xml"/>
+		<mapper resource="mybatis/mappers/calendar.xml"/>
 	</mappers>
 	
 </configuration>

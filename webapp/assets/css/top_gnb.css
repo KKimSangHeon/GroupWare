@@ -11,21 +11,21 @@
         }
 
         #top_gnb > a.item_1 { background: url('/groupware/assets/images/board.png') }
-        #top_gnb > a.item_2 { background: url('/groupware/assets/images/approval.png') }
+        #top_gnb > a.item_2 { background: url('/groupware/assets/images/schedule.png') }
         #top_gnb > a.item_3 { background: url('/groupware/assets/images/serarch_employee.png') }
         #top_gnb > a.item_4 { background: url('/groupware/assets/images/message.png') }
         #top_gnb > a.item_5 { background: url('/groupware/assets/images/mypage.png') }
 
 
         #top_gnb > a.item_1:hover { background: url('/groupware/assets/images/board_on.png') }
-        #top_gnb > a.item_2:hover { background: url('/groupware/assets/images/approval_on.png') }
+        #top_gnb > a.item_2:hover { background: url('/groupware/assets/images/schedule_on.png') }
         #top_gnb > a.item_3:hover { background: url('/groupware/assets/images/serarch_employee_on.png') }
         #top_gnb > a.item_4:hover { background: url('/groupware/assets/images/message_on.png') }
         #top_gnb > a.item_5:hover { background: url('/groupware/assets/images/mypage_on.png') }
 
 
         #top_gnb > a.item_1.active { background: url('/groupware/assets/images/board_on.png') }
-        #top_gnb > a.item_2.active { background: url('/groupware/assets/images/approval_on.png') }
+        #top_gnb > a.item_2.active { background: url('/groupware/assets/images/schedule_on.png') }
         #top_gnb > a.item_3.active { background: url('/groupware/assets/images/serarch_employee_on.png') }
         #top_gnb > a.item_4.active { background: url('/groupware/assets/images/message_on.png') }
         #top_gnb > a.item_5.active { background: url('/groupware/assets/images/mypage_on.png') }
